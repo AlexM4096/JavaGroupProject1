@@ -9,7 +9,7 @@ public class Nutrients
     public final int proteinGrams;
     public final int fatGrams;
     public final int carbGrams;
-    
+
     public final int grams;
     public final int calories;
 
