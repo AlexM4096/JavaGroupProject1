@@ -3,7 +3,6 @@ package com.example.javagroupproject1.data;
 public class Ingredient {
     //region Fields
 
-    public int ggg;
     private String name;
     private int grams;
     private Nutrients nutrients;
@@ -38,7 +37,7 @@ public class Ingredient {
 
     //endregion
 
-    //region Public Methods
+    //region Methods
 
     public int calories()
     {

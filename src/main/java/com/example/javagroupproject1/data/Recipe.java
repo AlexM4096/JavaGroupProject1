@@ -9,6 +9,7 @@ public class Recipe {
     private String name;
     private String category;
     private int difficulty;
+    private int cookingTimeMinutes;
     private int grams;
     private Nutrients nutrients;
     public final List<Ingredient> ingredients = new ArrayList<Ingredient>();
@@ -40,6 +41,14 @@ public class Recipe {
 
     public void setDifficulty(int difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public int getCookingTimeMinutes() {
+        return cookingTimeMinutes;
+    }
+
+    public void setCookingTimeMinutes(int cookingTimeMinutes){
+        this.cookingTimeMinutes = cookingTimeMinutes;
     }
 
     public int getGrams() {
