@@ -85,14 +85,14 @@ public class WebScraper {
                 if(imageUrls.size() > preparationSteps.size())
                 {
                     if (i == 0){
-                        fileName = "image" + "Title" + "_" + title+imageUrl.substring(imageUrl.lastIndexOf("."));;
+                        fileName = "image" + "Title" + "_" + title+imageUrl.substring(imageUrl.lastIndexOf("."));
                     }
                     else {
-                        fileName = "image" + (i-1) + "_" + title+imageUrl.substring(imageUrl.lastIndexOf("."));;
+                        fileName = "image" + (i-1) + "_" + title+imageUrl.substring(imageUrl.lastIndexOf("."));
                     }
                 }
                 else{
-                    fileName = "image" + i + "_" + title+imageUrl.substring(imageUrl.lastIndexOf("."));;
+                    fileName = "image" + i + "_" + title+imageUrl.substring(imageUrl.lastIndexOf("."));
                 }
 
                 // Скачивание и сохранение изображения
