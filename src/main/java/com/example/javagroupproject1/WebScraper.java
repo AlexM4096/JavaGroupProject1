@@ -1,5 +1,6 @@
 package com.example.javagroupproject1;
 
+import com.example.javagroupproject1.data.WebData;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -15,24 +16,18 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 
 public class WebScraper {
-    private String Title;
-    private List<String> ingredients;
-    private List<String> preparationSteps;
-    private List<String> imageUrls;
-
-
+    private WebData Data;
     public WebScraper() {
-        ingredients = new ArrayList<>();
-        preparationSteps = new ArrayList<>();
-        imageUrls = new ArrayList<>();
+        Data = new WebData();
     }
 
-    public void scrapeWebsite(String url, String outPut) {
+    public WebData scrapeWebsite(String url, String outPut) {
         try {
             // Загрузка HTML-страницы
             Document document = Jsoup.connect(url).get();
+            List<String> imageUrls = new ArrayList<>();
 
-            // Извлечение изображений шагов приготовления
+            // Извлечение изображения блюда
             Elements imgTitleElements = document.select("img.emotion-gxbcya");
             for (Element imgElement : imgTitleElements) {
                 String imageUrl = imgElement.attr("src");
@@ -40,24 +35,28 @@ public class WebScraper {
             }
 
             // Извлечение названия блюда
-            Element titleElement = document.select("h1.emotion-gl52ge").get(0);
+            Element titleElement = document.selectFirst("h1.emotion-gl52ge");
             String title = (titleElement != null) ? titleElement.text() : "Название не найдено";
-            Title = title;
+            Data.setTitle(title);
 
             // Извлечение ингредиентов
             Elements ingredientElements = document.select("div.emotion-7yevpr");
+            List<String> ingredients = new ArrayList<>();
             for (Element ingredientElement : ingredientElements) {
                 ingredients.add(ingredientElement.text());
             }
+            Data.setIngredients(ingredients);
 
             // Извлечение шагов приготовления
             Elements preparationStepElements = document.select("span.emotion-wdt5in");
             System.out.println("Шаги приготовления:");
             int count = 1;
+            List<String> preparationSteps = new ArrayList<>();
             for (Element preparationStepElement : preparationStepElements) {
                 preparationSteps.add(count+". "+preparationStepElement.text());
                 count++;
             }
+            Data.setPreparationSteps(preparationSteps);
 
             // Извлечение изображений шагов приготовления
             Elements imgElements = document.select("img.emotion-ducv57");
@@ -65,39 +64,45 @@ public class WebScraper {
                 String imageUrl = imgElement.attr("src");
                 imageUrls.add(imageUrl);
             }
+            Data.setImageUrls(imageUrls);
             // Скачивание и сохранение изображения шагов приготовления
-            downloadImages(imageUrls,outPut,preparationSteps, Title);
+            downloadImages(Data,outPut);
+            return Data;
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
-    private static void downloadImages(List<String> imageUrls, String outputFolder, List<String> preparationSteps, String Title) {
-        for (int i = 0; i < imageUrls.size(); i++) {
-            String imageUrl = imageUrls.get(i);
+    private static void downloadImages(WebData Data, String outputFolder) {
+        String title = Data.getTitle().replace(" ", "-");
+        String outputFolder1 = outputFolder + "\\" + title;
+
+        for (int i = 0; i < Data.getImageUrls().size(); i++) {
+            String imageUrl = Data.getImageUrls().get(i);
             try {
                 String fileName;
-                String title = Title.replace(" ", "-");
                 // Создание URL изображения
                 URL url = new URL(imageUrl);
 
-                if(imageUrls.size() > preparationSteps.size())
+                if(Data.getImageUrls().size() > Data.getImageUrls().size())
                 {
                     if (i == 0){
-                        fileName = "image" + "Title" + "_" + title+imageUrl.substring(imageUrl.lastIndexOf("."));
+                        fileName = "image" + "Title" + "_" + imageUrl.substring(imageUrl.lastIndexOf("."));
                     }
                     else {
-                        fileName = "image" + (i-1) + "_" + title+imageUrl.substring(imageUrl.lastIndexOf("."));
+                        fileName = "image" + (i-1) + "_" + imageUrl.substring(imageUrl.lastIndexOf("."));
                     }
                 }
                 else{
-                    fileName = "image" + i + "_" + title+imageUrl.substring(imageUrl.lastIndexOf("."));
+                    fileName = "image" + i + "_" + imageUrl.substring(imageUrl.lastIndexOf("."));
                 }
 
                 // Скачивание и сохранение изображения
                 try (InputStream in = url.openStream()) {
-                    Path outputPath = Path.of(outputFolder, fileName);
+                    Path outputPath = Path.of(outputFolder1, fileName);
+                    Files.createDirectories(outputPath.getParent()); // Создаем директорию, если её нет
                     Files.copy(in, outputPath, StandardCopyOption.REPLACE_EXISTING);
                 }
             } catch (IOException e) {
@@ -106,20 +111,6 @@ public class WebScraper {
         }
 
     }
-
-
-    public String getTitle() {
-        return Title;
-    }
-
-    public List<String> getIngredients() {
-        return ingredients;
-    }
-
-    public List<String> getPreparationSteps() {
-        return preparationSteps;
-    }
-
     public static void main(String[] args) {
         if (args.length != 2) {
             System.out.println("Введите url и путь для папки сохранения картинок");
@@ -128,12 +119,12 @@ public class WebScraper {
         String url = args[0];
         String outPut = args[1];
         WebScraper scraper = new WebScraper();
-        scraper.scrapeWebsite(url, outPut);
+        WebData data = scraper.scrapeWebsite(url, outPut);
 
 
-        String title = scraper.getTitle();
-        List<String> ingredients = scraper.getIngredients();
-        List<String> preparationSteps = scraper.getPreparationSteps();
+        String title = data.getTitle();
+        List<String> ingredients = data.getIngredients();
+        List<String> preparationSteps = data.getPreparationSteps();
 
         if (title != null) {
             System.out.println("Название блюда: " + title);
