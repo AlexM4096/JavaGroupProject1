@@ -112,42 +112,7 @@ public class WebScraper {
 
     }
     public static void main(String[] args) {
-        if (args.length != 2) {
-            System.out.println("Введите url и путь для папки сохранения картинок");
-            return;
-        }
-        String url = args[0];
-        String outPut = args[1];
-        WebScraper scraper = new WebScraper();
-        WebData data = scraper.scrapeWebsite(url, outPut);
 
-
-        String title = data.getTitle();
-        List<String> ingredients = data.getIngredients();
-        List<String> preparationSteps = data.getPreparationSteps();
-
-        if (title != null) {
-            System.out.println("Название блюда: " + title);
-        } else {
-            System.out.println("Название блюда не найдено");
-        }
-
-        if (ingredients != null) {
-            System.out.println("Ингредиенты:");
-            for (String ingredient : ingredients) {
-                System.out.println(ingredient);
-            }
-        } else {
-            System.out.println("Ингредиенты не найдены");
-        }
-
-        if (preparationSteps != null) {
-            System.out.println("Шаги приготовления:");
-            for (String step : preparationSteps) {
-                System.out.println(step);
-            }
-        } else {
-            System.out.println("Шаги приготовления не найдены");
-        }
     }
+
 }
