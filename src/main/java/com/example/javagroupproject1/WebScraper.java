@@ -86,7 +86,7 @@ public class WebScraper {
                 // Создание URL изображения
                 URL url = new URL(imageUrl);
 
-                if(Data.getImageUrls().size() > Data.getImageUrls().size())
+                if(Data.getImageUrls().size() > Data.getPreparationSteps().size())
                 {
                     if (i == 0){
                         fileName = "image" + "Title" + "_" + imageUrl.substring(imageUrl.lastIndexOf("."));

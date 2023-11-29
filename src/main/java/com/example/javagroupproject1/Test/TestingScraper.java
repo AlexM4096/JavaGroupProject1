@@ -6,8 +6,8 @@ import com.example.javagroupproject1.data.WebData;
 public class TestingScraper {
     public static void main(String[] args) {
         WebScraper webScraper = new WebScraper();
-        String url = args[0]; // URL
-        String outputFolder = args[1]; // папка для сохранения изображений
+        String url = "https://eda.ru/recepty/vypechka-deserty/brauni-brownie-20955"; // URL
+        String outputFolder = "C:\\Users\\*\\IdeaProjects\\parser2\\img"; // папка для сохранения изображений
 
         // Вызываем метод scrapeWebsite и получаем данные
         WebData webData = webScraper.scrapeWebsite(url, outputFolder);
