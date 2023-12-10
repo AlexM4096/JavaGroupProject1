@@ -34,10 +34,45 @@ public class WebScraper {
                 imageUrls.add(imageUrl);
             }
 
+            // Извлечение категории блюда
+            Element categoryElement = document.select("span.emotion-1h6i17m").get(1);
+            String category = (categoryElement != null) ? categoryElement.text() : "Название не найдено";
+            Data.setCategory(category);
+
             // Извлечение названия блюда
             Element titleElement = document.selectFirst("h1.emotion-gl52ge");
             String title = (titleElement != null) ? titleElement.text() : "Название не найдено";
             Data.setTitle(title);
+
+            // Извлечение времени приготовления блюда
+            Element timeElement = document.selectFirst("div.emotion-my9yfq");
+            String time = (timeElement != null) ? timeElement.text() : "Название не найдено";
+            Data.setTime(time);
+
+            // Извлечение кол-ва порций блюда
+            Element portionsElement = document.selectFirst("div.emotion-1047m5l");
+            String portions = (portionsElement != null) ? portionsElement.text() : "Название не найдено";
+            Data.setPortions(Double.parseDouble(portions));
+
+            // Извлечение каллорий блюда
+            Element caloriesElement = document.selectFirst("[itemprop=calories]");
+            String calories = (caloriesElement != null) ? caloriesElement.text() : "Название не найдено";
+            Data.setCalories(Double.parseDouble(calories)*Data.getPortions());
+
+            // Извлечение белков блюда
+            Element proteinsElement = document.selectFirst("[itemprop=proteinContent]");
+            String proteins = (proteinsElement != null) ? proteinsElement.text() : "Название не найдено";
+            Data.setProteins(Double.parseDouble(proteins)*Data.getPortions());
+
+            // Извлечение жиров блюда
+            Element fatsElement = document.selectFirst("[itemprop=fatContent]");
+            String fats = (fatsElement != null) ? fatsElement.text() : "Название не найдено";
+            Data.setFats(Double.parseDouble(fats)*Data.getPortions());
+
+            // Извлечение углеводов блюда
+            Element carbohydratesElement = document.selectFirst("[itemprop=carbohydrateContent]");
+            String carbohydrates = (carbohydratesElement != null) ? carbohydratesElement.text() : "Название не найдено";
+            Data.setCarbohydrates(Double.parseDouble(carbohydrates)*Data.getPortions());
 
             // Извлечение ингредиентов
             Elements ingredientElements = document.select("div.emotion-7yevpr");
