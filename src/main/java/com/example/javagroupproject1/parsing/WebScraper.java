@@ -1,27 +1,23 @@
-package com.example.javagroupproject1;
+package com.example.javagroupproject1.parsing;
 
-import com.example.javagroupproject1.data.WebData;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.List;
 
 public class WebScraper {
-    private WebData Data;
-    public WebScraper() {
-        Data = new WebData();
-    }
-
     public WebData scrapeWebsite(String url, String outPut) {
+        WebData data = new WebData();
+
         try {
             // Загрузка HTML-страницы
             Document document = Jsoup.connect(url).get();
@@ -42,7 +38,7 @@ public class WebScraper {
             // Извлечение названия блюда
             Element titleElement = document.selectFirst("h1.emotion-gl52ge");
             String title = (titleElement != null) ? titleElement.text() : "Название не найдено";
-            Data.setTitle(title);
+            data.setTitle(title);
 
             // Извлечение времени приготовления блюда
             Element timeElement = document.selectFirst("div.emotion-my9yfq");
@@ -80,18 +76,17 @@ public class WebScraper {
             for (Element ingredientElement : ingredientElements) {
                 ingredients.add(ingredientElement.text());
             }
-            Data.setIngredients(ingredients);
+            data.setIngredients(ingredients);
 
             // Извлечение шагов приготовления
             Elements preparationStepElements = document.select("span.emotion-wdt5in");
-            System.out.println("Шаги приготовления:");
             int count = 1;
             List<String> preparationSteps = new ArrayList<>();
             for (Element preparationStepElement : preparationStepElements) {
                 preparationSteps.add(count+". "+preparationStepElement.text());
                 count++;
             }
-            Data.setPreparationSteps(preparationSteps);
+            data.setPreparationSteps(preparationSteps);
 
             // Извлечение изображений шагов приготовления
             Elements imgElements = document.select("img.emotion-ducv57");
@@ -99,10 +94,10 @@ public class WebScraper {
                 String imageUrl = imgElement.attr("src");
                 imageUrls.add(imageUrl);
             }
-            Data.setImageUrls(imageUrls);
+            data.setImageUrls(imageUrls);
             // Скачивание и сохранение изображения шагов приготовления
-            downloadImages(Data,outPut);
-            return Data;
+            downloadImages(data,outPut);
+            return data;
 
         } catch (IOException e) {
             e.printStackTrace();

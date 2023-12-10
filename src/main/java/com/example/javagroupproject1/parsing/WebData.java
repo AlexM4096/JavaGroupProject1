@@ -1,4 +1,4 @@
-package com.example.javagroupproject1.data;
+package com.example.javagroupproject1.parsing;
 
 
 import java.util.ArrayList;

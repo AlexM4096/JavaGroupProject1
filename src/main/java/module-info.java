@@ -7,4 +7,6 @@ module com.example.javagroupproject1 {
 
     opens com.example.javagroupproject1 to javafx.fxml;
     exports com.example.javagroupproject1;
+    exports com.example.javagroupproject1.parsing;
+    opens com.example.javagroupproject1.parsing to javafx.fxml;
 }

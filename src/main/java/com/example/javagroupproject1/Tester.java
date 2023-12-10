@@ -1,13 +1,13 @@
-package com.example.javagroupproject1.Test;
+package com.example.javagroupproject1;
 
-import com.example.javagroupproject1.WebScraper;
-import com.example.javagroupproject1.data.WebData;
+import com.example.javagroupproject1.parsing.WebData;
+import com.example.javagroupproject1.parsing.WebScraper;
 
-public class TestingScraper {
+public class Tester {
     public static void main(String[] args) {
         WebScraper webScraper = new WebScraper();
-        String url = "https://eda.ru/recepty/vypechka-deserty/brauni-brownie-20955"; // URL
-        String outputFolder = "C:\\Users\\*\\IdeaProjects\\parser2\\img"; // папка для сохранения изображений
+        String url = "https://eda.ru/recepty/zakuski/svinye-ushi-po-kitayski-175151"; // URL
+        String outputFolder = "C:\\Users\\trank\\IdeaProjects\\parser2\\img"; // папка для сохранения изображений
 
         // Вызываем метод scrapeWebsite и получаем данные
         WebData webData = webScraper.scrapeWebsite(url, outputFolder);
