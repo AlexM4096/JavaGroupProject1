@@ -1,34 +1,24 @@
 package com.example.javagroupproject1;
 
-import com.example.javagroupproject1.parsing.WebData;
-import com.example.javagroupproject1.parsing.WebScraper;
+import com.example.javagroupproject1.data.Recipe;
+import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.dao.DaoManager;
+import com.j256.ormlite.support.ConnectionSource;
+import com.j256.ormlite.jdbc.JdbcConnectionSource;
+import com.j256.ormlite.table.TableUtils;
 
 public class Tester {
-    public static void main(String[] args) {
-        WebScraper webScraper = new WebScraper();
-        String url = "https://eda.ru/recepty/zakuski/svinye-ushi-po-kitayski-175151"; // URL
-        String outputFolder = "C:\\Users\\trank\\IdeaProjects\\parser2\\img"; // папка для сохранения изображений
+    public static void main(String[] args) throws Exception{
+        String databaseUrl = "jdbc:h2:mem:recipe";
+        ConnectionSource connectionSource = new JdbcConnectionSource(databaseUrl);
+        Dao<Recipe, String> recipeDao = DaoManager.createDao(connectionSource, Recipe.class);
+        TableUtils.createTable(connectionSource, Recipe.class);
 
-        // Вызываем метод scrapeWebsite и получаем данные
-        WebData webData = webScraper.scrapeWebsite(url, outputFolder);
+        Recipe recipe = new Recipe();
+        recipe.setName("test");
 
-        // Печатаем полученные данные
-        printWebData(webData);
-    }
+        recipeDao.create(recipe);
 
-    private static void printWebData(WebData webData) {
-        if (webData != null) {
-            System.out.println("Название блюда: " + webData.getTitle());
-            System.out.println("Ингредиенты:");
-            for (String ingredient : webData.getIngredients()) {
-                System.out.println(ingredient);
-            }
-            System.out.println("Шаги приготовления:");
-            for (String step : webData.getPreparationSteps()) {
-                System.out.println(step);
-            }
-        } else {
-            System.out.println("Данные не были получены.");
-        }
+        System.out.println(recipeDao.queryForId("test"));
     }
 }
