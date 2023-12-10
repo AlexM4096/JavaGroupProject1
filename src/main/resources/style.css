@@ -1,0 +1,23 @@
+@font-face{
+font-family:"AlumniSans";
+src:url("AlumniSans-Regular.ttf");
+}
+*{
+-fx-font-family:"Alumni Sans Regular";
+}
+.header{
+-fx-background-color:#CC80B7;
+}
+.header .button
+{
+-fx-font-size:18;
+-fx-font-family:"Alumni Sans Regular";
+-fx-background-color:#CC80B7;
+-fx-text-fill:#FFF;
+}
+.H1{
+-fx-font-size:32;
+}
+.body{
+-fx-background-color:#F6E7DF;
+}

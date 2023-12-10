@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" stylesheets="@/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" styleClass="header" VBox.vgrow="NEVER">
+      <children>
+          <Button onAction="#onOpenRecipesPageButtonClick" text="рецепты">
+            <HBox.margin>
+               <Insets right="10.0" />
+            </HBox.margin>
+            <font>
+            </font></Button>
+         <HBox HBox.hgrow="ALWAYS">
+            <children>
+                <ImageView fitHeight="60.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@/COOKING.svg" />
+                  </image>
+               </ImageView>
+            </children>
+         </HBox>
+         <Button alignment="CENTER" mnemonicParsing="false" text="добавить рецепт">
+            <HBox.margin>
+               <Insets left="10.0" />
+            </HBox.margin>
+            <font>
+            </font></Button>
+      </children>
+   </HBox>
+   <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+     <content>
+       <VBox alignment="TOP_CENTER" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: F6E7DF;">
+            <children>
+               <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" spacing="70.0">
+                  <children>
+                     <ChoiceBox fx:id="choiceboxsort" prefWidth="150.0" />
+                     <Button mnemonicParsing="false" text="Button" />
+                  </children></HBox>
+               <Label styleClass="H1" text="Каталог Рецептов">
+                  <VBox.margin>
+                     <Insets right="300.0" />
+                  </VBox.margin></Label>
+               <GridPane fx:id="FlowPaneCatalogItems" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+            </children></VBox>
+     </content>
+   </ScrollPane>
+</VBox>
