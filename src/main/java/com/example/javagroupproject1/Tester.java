@@ -21,6 +21,7 @@ public class Tester {
             System.out.println("Категория блюда: " + webData.getCategory());
             System.out.println("Название блюда: " + webData.getTitle());
             System.out.println("Время приготовление: " + webData.getTime());
+            System.out.println("Порции: " + webData.getPortions());
             System.out.println("Ингредиенты:");
             for (String ingredient : webData.getIngredients()) {
                 System.out.println(ingredient);

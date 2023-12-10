@@ -14,9 +14,11 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class WebScraper {
     public WebData scrapeWebsite(String url, String outPut) {
-        WebData data = new WebData();
+        WebData Data = new WebData();
 
         try {
             // Загрузка HTML-страницы
@@ -38,7 +40,7 @@ public class WebScraper {
             // Извлечение названия блюда
             Element titleElement = document.selectFirst("h1.emotion-gl52ge");
             String title = (titleElement != null) ? titleElement.text() : "Название не найдено";
-            data.setTitle(title);
+            Data.setTitle(title);
 
             // Извлечение времени приготовления блюда
             Element timeElement = document.selectFirst("div.emotion-my9yfq");
@@ -76,7 +78,7 @@ public class WebScraper {
             for (Element ingredientElement : ingredientElements) {
                 ingredients.add(ingredientElement.text());
             }
-            data.setIngredients(ingredients);
+            Data.setIngredients(ingredients);
 
             // Извлечение шагов приготовления
             Elements preparationStepElements = document.select("span.emotion-wdt5in");
@@ -86,7 +88,7 @@ public class WebScraper {
                 preparationSteps.add(count+". "+preparationStepElement.text());
                 count++;
             }
-            data.setPreparationSteps(preparationSteps);
+            Data.setPreparationSteps(preparationSteps);
 
             // Извлечение изображений шагов приготовления
             Elements imgElements = document.select("img.emotion-ducv57");
@@ -94,10 +96,10 @@ public class WebScraper {
                 String imageUrl = imgElement.attr("src");
                 imageUrls.add(imageUrl);
             }
-            data.setImageUrls(imageUrls);
+            Data.setImageUrls(imageUrls);
             // Скачивание и сохранение изображения шагов приготовления
-            downloadImages(data,outPut);
-            return data;
+            downloadImages(Data,outPut);
+            return Data;
 
         } catch (IOException e) {
             e.printStackTrace();
