@@ -67,14 +67,14 @@
                         <Insets left="50.0" top="20.0" />
                      </VBox.margin>
                   </Label>
-                  <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: FFF;">
+                  <HBox prefHeight="88.0" prefWidth="538.0" style="-fx-background-color: FFF;">
                      <VBox.margin>
                         <Insets left="50.0" right="10.0" top="10.0" />
                      </VBox.margin>
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/zav.png" />
+                              <Image url="@/recipe2.png" />
                            </image>
                         </ImageView>
                         <GridPane prefHeight="100.0" prefWidth="210.0">
@@ -125,14 +125,14 @@
                         </GridPane>
                      </children>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: FFF;">
+                  <HBox prefHeight="86.0" prefWidth="538.0" style="-fx-background-color: FFF;">
                      <VBox.margin>
                         <Insets left="50.0" right="10.0" top="10.0" />
                      </VBox.margin>
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/zav.png" />
+                              <Image url="@/recipe1.png" />
                            </image></ImageView>
                         <GridPane>
                           <columnConstraints>
@@ -178,14 +178,14 @@
                         </GridPane>
                      </children>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: FFF;">
+                  <HBox prefHeight="84.0" prefWidth="538.0" style="-fx-background-color: FFF;">
                      <VBox.margin>
                         <Insets left="50.0" right="10.0" top="10.0" />
                      </VBox.margin>
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/zav.png" />
+                              <Image url="@/recipe3.png" />
                            </image></ImageView>
                         <GridPane prefHeight="100.0" prefWidth="188.0">
                           <columnConstraints>
@@ -232,14 +232,14 @@
                         </GridPane>
                      </children>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: FFF;">
+                  <HBox prefHeight="86.0" prefWidth="538.0" style="-fx-background-color: FFF;">
                      <VBox.margin>
                         <Insets left="50.0" right="10.0" top="10.0" />
                      </VBox.margin>
                      <children>
-                        <ImageView fitHeight="100.0" fitWidth="129.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="92.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/zav.png" />
+                              <Image url="@/recipe4.png" />
                            </image></ImageView>
                         <GridPane prefHeight="100.0" prefWidth="185.0">
                           <columnConstraints>
@@ -286,14 +286,14 @@
                         </GridPane>
                      </children>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: FFF;">
+                  <HBox prefHeight="84.0" prefWidth="538.0" style="-fx-background-color: FFF;">
                      <VBox.margin>
                         <Insets left="50.0" right="10.0" top="10.0" />
                      </VBox.margin>
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/zav.png" />
+                              <Image url="@/recipe5.png" />
                            </image></ImageView>
                         <GridPane>
                           <columnConstraints>
