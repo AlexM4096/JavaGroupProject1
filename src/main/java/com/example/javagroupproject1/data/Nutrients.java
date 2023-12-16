@@ -1,5 +1,9 @@
 package com.example.javagroupproject1.data;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
+@DatabaseTable(tableName = "nutrients")
 public class Nutrients {
     //region Constant Fields
 
@@ -11,13 +15,34 @@ public class Nutrients {
 
     //region Private Fields
 
+    @DatabaseField(useGetSet = true, generatedId = true)
+    private int ID;
+
+    @DatabaseField(useGetSet = true)
     private int proteinGrams;
+
+    @DatabaseField(useGetSet = true)
     private int fatGrams;
+
+    @DatabaseField(useGetSet = true)
     private int carbGrams;
 
     //endregion
 
+    public Nutrients() {
+    }
+
+
     //region Public Properties
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
     public int getProteinGrams() {
         return proteinGrams;
     }

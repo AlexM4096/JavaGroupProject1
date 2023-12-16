@@ -2,7 +2,7 @@ package com.example.javagroupproject1.repository;
 
 public interface IRepository<T> {
     // Create
-    void Insert(T entity);
+    void Add(T entity);
 
     // Read
     T Find(int id);
@@ -11,5 +11,5 @@ public interface IRepository<T> {
     void Update(T entity);
 
     // Delete
-    void Delete(T entity);
+    void Remove(T entity);
 }

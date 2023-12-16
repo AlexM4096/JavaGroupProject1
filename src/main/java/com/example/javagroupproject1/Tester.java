@@ -1,41 +1,30 @@
 package com.example.javagroupproject1;
 
-import com.example.javagroupproject1.parsing.WebData;
-import com.example.javagroupproject1.parsing.WebScraper;
+import com.example.javagroupproject1.data.Recipe;
+import com.j256.ormlite.dao.Dao;
+import com.j256.ormlite.dao.DaoManager;
+import com.j256.ormlite.jdbc.JdbcConnectionSource;
+import com.j256.ormlite.support.ConnectionSource;
+import com.j256.ormlite.table.TableUtils;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class Tester {
-    public static void main(String[] args) {
-        WebScraper webScraper = new WebScraper();
-        String url = "https://eda.ru/recepty/zakuski/svinye-ushi-po-kitayski-175151"; // URL
-        String outputFolder = "C:\\Users\\trank\\IdeaProjects\\parser2\\img"; // папка для сохранения изображений
+    public static void main(String[] args) throws Exception{
+        String databaseUrl = "jdbc:sqlite:D:/Apps/IntelliJ IDEA/IdeaProjects/JavaGroupProject1/src/main/resources/com/example/javagroupproject1/test.db:recipe";
+        ConnectionSource connectionSource = new JdbcConnectionSource(databaseUrl);
 
-        // Вызываем метод scrapeWebsite и получаем данные
-        WebData webData = webScraper.scrapeWebsite(url, outputFolder);
+        Connection connection = DriverManager.getConnection(databaseUrl);
 
-        // Печатаем полученные данные
-        printWebData(webData);
-    }
+        Dao<Recipe, String> recipeDao = DaoManager.createDao(connectionSource, Recipe.class);
+        TableUtils.createTableIfNotExists(connectionSource, Recipe.class);
 
-    private static void printWebData(WebData webData) {
-        if (webData != null) {
-            System.out.println("Категория блюда: " + webData.getCategory());
-            System.out.println("Название блюда: " + webData.getTitle());
-            System.out.println("Время приготовление: " + webData.getTime());
-            System.out.println("Порции: " + webData.getPortions());
-            System.out.println("Ингредиенты:");
-            for (String ingredient : webData.getIngredients()) {
-                System.out.println(ingredient);
-            }
-            System.out.println("Каллорийность в ккал: " + webData.getCalories());
-            System.out.println("Белки в граммах: " + webData.getProteins());
-            System.out.println("Жиры в граммах: " + webData.getFats());
-            System.out.println("Углеводы в граммах: " + webData.getCarbohydrates());
-            System.out.println("Шаги приготовления:");
-            for (String step : webData.getPreparationSteps()) {
-                System.out.println(step);
-            }
-        } else {
-            System.out.println("Данные не были получены.");
-        }
+        Recipe recipe = new Recipe();
+        recipe.setName("testdsf");
+
+        recipeDao.isTableExists();
+
+        connectionSource.close();
     }
 }
