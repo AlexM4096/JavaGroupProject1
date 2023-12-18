@@ -6,11 +6,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class MyApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("addrecipe.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        FXMLLoader fxmlLoader = new FXMLLoader(MyApplication.class.getResource("views/addrecipe.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 400, 300);
+        stage.setFullScreen(true);
         stage.setScene(scene);
         stage.show();
     }

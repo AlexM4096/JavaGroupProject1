@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="800.0" prefWidth="600.0" stylesheets="@/style1.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="800.0" prefWidth="600.0" stylesheets="@/com/example/javagroupproject1/styles/style1.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: CC80B7;" styleClass="header" VBox.vgrow="NEVER">
          <children>
@@ -21,7 +21,7 @@
                <children>
                   <ImageView fitHeight="60.0" fitWidth="200.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@/COOKING.png" />
+                        <Image url="@/com/example/javagroupproject1/images/COOKING.png" />
                      </image>
                   </ImageView>
                </children></HBox>
@@ -74,7 +74,7 @@
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/recipe2.png" />
+                              <Image url="@/com/example/javagroupproject1/images/recipe2.png" />
                            </image>
                         </ImageView>
                         <GridPane prefHeight="100.0" prefWidth="210.0">
@@ -96,7 +96,7 @@
                               </Label>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                                  <image>
-                                    <Image url="@/time.png" />
+                                    <Image url="@/com/example/javagroupproject1/images/time.png" />
                                  </image>
                                  <GridPane.margin>
                                     <Insets left="5.0" />
@@ -132,7 +132,7 @@
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/recipe1.png" />
+                              <Image url="@/com/example/javagroupproject1/images/recipe1.png" />
                            </image></ImageView>
                         <GridPane>
                           <columnConstraints>
@@ -150,7 +150,7 @@
                               </Label>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                                  <image>
-                                    <Image url="@/time.png" />
+                                    <Image url="@/com/example/javagroupproject1/images/time.png" />
                                  </image>
                                  <GridPane.margin>
                                     <Insets left="5.0" />
@@ -185,7 +185,7 @@
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/recipe3.png" />
+                              <Image url="@/com/example/javagroupproject1/images/recipe3.png" />
                            </image></ImageView>
                         <GridPane prefHeight="100.0" prefWidth="188.0">
                           <columnConstraints>
@@ -206,7 +206,7 @@
                                     <Insets left="5.0" />
                                  </GridPane.margin>
                                  <image>
-                                    <Image url="@/time.png" />
+                                    <Image url="@/com/example/javagroupproject1/images/time.png" />
                                  </image>
                               </ImageView>
                               <Label alignment="CENTER" text="15 минут" GridPane.rowIndex="1">
@@ -239,7 +239,7 @@
                      <children>
                         <ImageView fitHeight="92.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/recipe4.png" />
+                              <Image url="@/com/example/javagroupproject1/images/recipe4.png" />
                            </image></ImageView>
                         <GridPane prefHeight="100.0" prefWidth="185.0">
                           <columnConstraints>
@@ -268,7 +268,7 @@
                                     <Insets left="5.0" />
                                  </GridPane.margin>
                                  <image>
-                                    <Image url="@/time.png" />
+                                    <Image url="@/com/example/javagroupproject1/images/time.png" />
                                  </image>
                               </ImageView>
                               <Label alignment="CENTER" prefHeight="24.0" prefWidth="131.0" text="Сложный" GridPane.rowIndex="1">
@@ -293,7 +293,7 @@
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/recipe5.png" />
+                              <Image url="@/com/example/javagroupproject1/images/recipe5.png" />
                            </image></ImageView>
                         <GridPane>
                           <columnConstraints>
@@ -314,7 +314,7 @@
                                     <Insets left="5.0" />
                                  </GridPane.margin>
                                  <image>
-                                    <Image url="@/time.png" />
+                                    <Image url="@/com/example/javagroupproject1/images/time.png" />
                                  </image>
                               </ImageView>
                               <Label alignment="CENTER" text="30 минут" GridPane.rowIndex="1">

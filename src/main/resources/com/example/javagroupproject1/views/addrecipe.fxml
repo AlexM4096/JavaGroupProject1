@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="1200.0" prefWidth="600.0" style="-fx-background-color: F6E7DF;" stylesheets="@/style1.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="1200.0" prefWidth="600.0" style="-fx-background-color: F6E7DF;" stylesheets="@../styles/style1.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
 <children>
 <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: CC80B7;" styleClass="header" VBox.vgrow="NEVER">
     <children>
@@ -21,7 +21,7 @@
             <children>
                 <ImageView fitHeight="60.0" fitWidth="200.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@/COOKING.png" />
+                        <Image url="@../images/COOKING.png" />
                     </image></ImageView>
             </children></HBox>
 
@@ -93,7 +93,7 @@
                               <Insets left="40.0" />
                            </HBox.margin>
                            <image>
-                              <Image url="@/zav.png" />
+                              <Image url="@../images/zav.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -196,7 +196,7 @@
                     <children>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/instr1.png" />
+                              <Image url="@../images/instr1.png" />
                            </image>
                         </ImageView>
                         <TextField alignment="TOP_LEFT" prefHeight="100.0" prefWidth="450.0" style="-fx-border-color: CC80B7;">

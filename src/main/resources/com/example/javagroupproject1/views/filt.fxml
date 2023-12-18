@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="700.0" prefWidth="2000.0" stylesheets="@/style1.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="700.0" prefWidth="2000.0" stylesheets="@/com/example/javagroupproject1/styles/style1.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
     <children>
     <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: CC80B7;" styleClass="header" VBox.vgrow="NEVER">
         <children>
@@ -21,7 +21,7 @@
                 <children>
                     <ImageView fitHeight="60.0" fitWidth="200.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@/COOKING.png" />
+                            <Image url="@/com/example/javagroupproject1/images/COOKING.png" />
                         </image></ImageView>
                 </children></HBox>
 

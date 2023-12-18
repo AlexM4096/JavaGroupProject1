@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" stylesheets="@/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" stylesheets="@/com/example/javagroupproject1/styles/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" styleClass="header" VBox.vgrow="NEVER">
       <children>
           <Button onAction="#onOpenRecipesPageButtonClick" text="рецепты">
@@ -20,7 +20,7 @@
             <children>
                 <ImageView fitHeight="42.0" fitWidth="287.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@/COOKING.png" />
+                     <Image url="@/com/example/javagroupproject1/images/COOKING.png" />
                   </image>
                   <HBox.margin>
                      <Insets left="400.0" top="10.0" />
