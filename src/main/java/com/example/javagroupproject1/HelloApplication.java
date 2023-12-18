@@ -13,9 +13,6 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.show();
-        /*stage.setTitle("Hello!");
-        PageController.getInstance().setStage(stage);
-        PageController.getInstance().change(new CatalogPage());*/
     }
 
     public static void main(String[] args) {
