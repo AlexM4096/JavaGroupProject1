@@ -1,6 +1,5 @@
 package com.example.javagroupproject1;
 
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,13 +7,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
-import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
-public class CatalogPage extends VBox implements Page {
+public class CatalogPage extends VBox implements IPage {
     private Scene scene;
     @Override
     public Scene getSceneOfPage(){
