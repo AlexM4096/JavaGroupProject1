@@ -2,9 +2,11 @@ package com.example.javagroupproject1;
 
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class PageController {
     private Stage stage;
-    public void change(IPage page){
+    public void change(Page page){
         try {
             System.out.println(this.stage);
             if (stage.getScene()!=null){

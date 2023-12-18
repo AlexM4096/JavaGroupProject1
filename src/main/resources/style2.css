@@ -1,6 +1,6 @@
 @font-face{
 font-family:"AlumniSans";
-src:url("../AlumniSans-Regular.ttf");
+src:url("AlumniSans-Regular.ttf");
 }
 *{
 -fx-font-family:"Alumni Sans Regular";
