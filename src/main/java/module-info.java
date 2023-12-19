@@ -4,6 +4,7 @@ module com.example.javagroupproject1 {
     requires org.jsoup;
     requires org.xerial.sqlitejdbc;
     requires ormlite.jdbc;
+    requires org.controlsfx.controls;
 
 
     opens com.example.javagroupproject1 to javafx.fxml;

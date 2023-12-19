@@ -10,7 +10,7 @@
 <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" stylesheets="@/com/example/javagroupproject1/styles/style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" styleClass="header" VBox.vgrow="NEVER">
       <children>
-          <Button onAction="#onOpenRecipesPageButtonClick" text="рецепты">
+          <Button text="рецепты">
             <HBox.margin>
                <Insets left="20.0" right="10.0" />
             </HBox.margin>

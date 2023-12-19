@@ -10,21 +10,26 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 
 public class CatalogItem extends VBox {
-    public CatalogItem(String _title, Image _image) {
+    private static FXMLLoader fxmlLoader;
+
+    @FXML
+    private ImageView image;
+    @FXML
+    private Label title;
+
+    public static void Init(){
         FXMLLoader fxmlLoader = new FXMLLoader(MyApplication.class.getResource("Catalog-item.fxml"));
-        fxmlLoader.setController(this);
-        fxmlLoader.setRoot(this);
+    }
+
+    public CatalogItem(String title, Image image) {
         try {
             fxmlLoader.load();
-            title.setText(_title);
-            imageview.setImage(_image);
+
+            this.title.setText(title);
+            this.image.setImage(image);
 
         }catch (IOException e){
             throw new RuntimeException(e);
         }
     }
-    @FXML
-    private ImageView imageview;
-    @FXML
-    private Label title;
 }

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="800.0" prefWidth="600.0" stylesheets="@/com/example/javagroupproject1/styles/style1.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="832.0" prefWidth="1299.0" stylesheets="@/com/example/javagroupproject1/styles/style1.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0" style="-fx-background-color: CC80B7;" styleClass="header" VBox.vgrow="NEVER">
          <children>
@@ -36,7 +36,7 @@
          </children></HBox>
       <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background-color: F6E7DF;" VBox.vgrow="ALWAYS">
         <content>
-          <VBox prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: F6E7DF;">
+          <VBox prefHeight="739.0" prefWidth="1296.0" style="-fx-background-color: F6E7DF;">
                <children>
                   <HBox alignment="CENTER" prefHeight="60.0" prefWidth="600.0" spacing="70.0">
                      <children>
@@ -74,7 +74,7 @@
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/com/example/javagroupproject1/images/recipe2.png" />
+                              <Image url="@../images/recipe2.png" />
                            </image>
                         </ImageView>
                         <GridPane prefHeight="100.0" prefWidth="210.0">
@@ -96,7 +96,7 @@
                               </Label>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                                  <image>
-                                    <Image url="@/com/example/javagroupproject1/images/time.png" />
+                                    <Image url="@../images/time.png" />
                                  </image>
                                  <GridPane.margin>
                                     <Insets left="5.0" />
@@ -132,7 +132,7 @@
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="122.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/com/example/javagroupproject1/images/recipe1.png" />
+                              <Image url="@../images/recipe1.png" />
                            </image></ImageView>
                         <GridPane>
                           <columnConstraints>
@@ -150,7 +150,7 @@
                               </Label>
                               <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                                  <image>
-                                    <Image url="@/com/example/javagroupproject1/images/time.png" />
+                                    <Image url="@../images/time.png" />
                                  </image>
                                  <GridPane.margin>
                                     <Insets left="5.0" />
@@ -185,7 +185,7 @@
                      <children>
                         <ImageView fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/com/example/javagroupproject1/images/recipe3.png" />
+                              <Image url="@../images/recipe3.png" />
                            </image></ImageView>
                         <GridPane prefHeight="100.0" prefWidth="188.0">
                           <columnConstraints>
