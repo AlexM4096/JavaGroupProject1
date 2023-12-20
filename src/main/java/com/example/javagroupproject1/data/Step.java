@@ -1,7 +1,6 @@
 package com.example.javagroupproject1.data;
 
 import com.j256.ormlite.field.DatabaseField;
-import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 import javafx.scene.image.Image;
 

@@ -30,14 +30,14 @@ public class Recipe {
     @DatabaseField(useGetSet = true)
     private int grams;
 
-    @DatabaseField(useGetSet = true, foreign = true)
-    private Nutrients nutrients;
+    @DatabaseField(useGetSet = true)
+    private int portions;
     
-    public final Collection<Image> images = new ArrayList<>();
+    private Collection<Image> images;
 
-    public final List<Ingredient> ingredients = new ArrayList<>();
+    private List<Ingredient> ingredients;
 
-    public final List<Step> steps = new ArrayList<>();
+    private List<Step> steps;
 
     //endregion
 
@@ -52,15 +52,13 @@ public class Recipe {
             String category,
             int difficulty,
             int cookingTimeMinutes,
-            int grams,
-            Nutrients nutrients
+            int grams
     ) {
         this.name = name;
         this.category = category;
         this.difficulty = difficulty;
         this.cookingTimeMinutes = cookingTimeMinutes;
         this.grams = grams;
-        this.nutrients = nutrients;
     }
 
     //endregion
@@ -115,12 +113,36 @@ public class Recipe {
         this.grams = grams;
     }
 
-    public Nutrients getNutrients() {
-        return nutrients;
+    public int getPortions() {
+        return portions;
     }
 
-    public void setNutrients(Nutrients nutrients) {
-        this.nutrients = nutrients;
+    public void setPortions(int portions) {
+        this.portions = portions;
+    }
+
+    public Collection<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(Collection<Image> images) {
+        this.images = images;
+    }
+
+    public List<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public List<Step> getSteps() {
+        return steps;
+    }
+
+    public void setSteps(List<Step> steps) {
+        this.steps = steps;
     }
 
     //endregion

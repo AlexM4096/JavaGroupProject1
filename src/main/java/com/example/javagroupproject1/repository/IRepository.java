@@ -1,15 +1,9 @@
 package com.example.javagroupproject1.repository;
 
 public interface IRepository<T> {
-    // Create
+    Iterable<T> GetAll();
+    T GetByID(int id);
     void Add(T entity);
-
-    // Read
-    T Find(int id);
-
-    // Update
     void Update(T entity);
-
-    // Delete
-    void Remove(T entity);
+    void Delete(T entity);
 }

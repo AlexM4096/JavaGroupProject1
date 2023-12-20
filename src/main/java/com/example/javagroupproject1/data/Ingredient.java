@@ -14,10 +14,10 @@ public class Ingredient {
     private String name;
 
     @DatabaseField(useGetSet = true)
-    private int grams;
+    private int amount;
 
-    @DatabaseField(useGetSet = true, foreign = true)
-    private Nutrients nutrients;
+    @DatabaseField(useGetSet = true)
+    private String amountOf;
 
     //endregion
 
@@ -39,29 +39,20 @@ public class Ingredient {
         this.name = name;
     }
 
-    public int getGrams() {
-        return grams;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setGrams(int grams) {
-        this.grams = grams;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
-    public Nutrients getNutrients() {
-        return nutrients;
+    public String getAmountOf() {
+        return amountOf;
     }
 
-    public void setNutrients(Nutrients nutrients) {
-        this.nutrients = nutrients;
-    }
-
-    //endregion
-
-    //region Methods
-
-    public int calories()
-    {
-        return nutrients.caloriesPerGram() * grams;
+    public void setAmountOf(String amountOf) {
+        this.amountOf = amountOf;
     }
 
     //endregion

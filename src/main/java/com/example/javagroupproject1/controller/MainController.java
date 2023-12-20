@@ -1,7 +1,5 @@
 package com.example.javagroupproject1.controller;
 
-import com.example.javagroupproject1.data.Nutrients;
-import com.example.javagroupproject1.data.Recipe;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -31,9 +29,9 @@ public class MainController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         category.getItems().addAll("1", "2");
 
-        for (int i =0; i < 50; i++){
-            vBox.getChildren().add(new RecipeNode(new Recipe("Борщ", "Русский", 4, 70, 300, new Nutrients())));
-        }
+//        for (int i =0; i < 50; i++){
+//            vBox.getChildren().add(new RecipeNode(new Recipe("Борщ", "Русский", 4, 70, 300)));
+//        }
     }
 
     @FXML
