@@ -8,7 +8,7 @@ public class Ingredient {
     //region Fields
 
     @DatabaseField(useGetSet = true, generatedId = true)
-    private int ID;
+    private long ID;
 
     @DatabaseField(useGetSet = true)
     private String name;
@@ -23,11 +23,11 @@ public class Ingredient {
 
     //region Properties
 
-    public int getID() {
+    public long getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(long ID) {
         this.ID = ID;
     }
 

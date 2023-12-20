@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="test" uuid="ddabacb2-5715-4237-bd32-9aabdce69ab9">
+    <data-source source="LOCAL" name="test" uuid="887ef356-c0f5-4037-8f8a-e3b5e55e4a1f">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\Apps\IntelliJ IDEA\IdeaProjects\JavaGroupProject1\src\main\resources\com\example\javagroupproject1\test.db</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\trank\IdeaProjects\JavaGroupProject1\src\main\resources\com\example\javagroupproject1\test.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>

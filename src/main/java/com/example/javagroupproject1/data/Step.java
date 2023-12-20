@@ -12,7 +12,7 @@ public class Step {
     //region Fields
 
     @DatabaseField(useGetSet = true, generatedId = true)
-    private int ID;
+    private long ID;
 
     @DatabaseField(useGetSet = true)
     private String description;
@@ -31,11 +31,11 @@ public class Step {
         this.description = description;
     }
 
-    public int getID() {
+    public long getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(long ID) {
         this.ID = ID;
     }
 //endregion

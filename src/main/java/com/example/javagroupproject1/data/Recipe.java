@@ -4,7 +4,6 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 import javafx.scene.image.Image;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -13,7 +12,7 @@ public class Recipe {
     //region Fields
 
     @DatabaseField(useGetSet = true, generatedId = true)
-    private int ID;
+    private long ID;
 
     @DatabaseField(useGetSet = true)
     private String name;
@@ -47,29 +46,15 @@ public class Recipe {
 
     }
 
-    public Recipe(
-            String name,
-            String category,
-            int difficulty,
-            int cookingTimeMinutes,
-            int grams
-    ) {
-        this.name = name;
-        this.category = category;
-        this.difficulty = difficulty;
-        this.cookingTimeMinutes = cookingTimeMinutes;
-        this.grams = grams;
-    }
-
     //endregion
 
     //region Properties
 
-    public int getID() {
+    public long getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(long ID) {
         this.ID = ID;
     }
 
