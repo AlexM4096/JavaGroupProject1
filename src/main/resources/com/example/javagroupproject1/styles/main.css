@@ -1,0 +1,42 @@
+* {
+    -fx-bacground-color-default: #F6E7DF;
+    -fx-primary-color-default: #CC80B7;
+    -fx-primary-color-hover: #CC8097;
+}
+
+.root {
+    -fx-background-color: -fx-bacground-color-default;
+}
+
+.combo-box-base {
+    -fx-background-color: -fx-primary-color-default;
+}
+
+.combo-box-base:hover {
+    -fx-background-color: -fx-primary-color-hover;
+}
+
+.nav-bar {
+    -fx-background-color: -fx-primary-color-default;
+}
+
+.nav-button {
+    -fx-background-insets: 100;
+}
+
+.filter-bar {
+
+}
+
+.filter-button {
+    -fx-background-color: -fx-primary-color-default;
+}
+
+.filter-button:hover {
+    -fx-background-color: -fx-primary-color-hover;
+}
+
+.scroll-pane {
+    -fx-background-color: -fx-bacground-color-default;
+}
+
