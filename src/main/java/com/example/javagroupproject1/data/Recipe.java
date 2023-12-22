@@ -8,7 +8,7 @@ import java.util.Collection;
 import java.util.List;
 
 @DatabaseTable(tableName = "recipes")
-public class Recipe {
+public class Recipe implements IEntity {
     //region Fields
 
     @DatabaseField(useGetSet = true, generatedId = true)

@@ -10,8 +10,8 @@ public class Ingredient {
     @DatabaseField(useGetSet = true, generatedId = true)
     private long ID;
 
-    @DatabaseField(useGetSet = true)
-    private String name;
+    @DatabaseField(useGetSet = true, foreign = true, foreignAutoCreate = true)
+    private IngredientType type;
 
     @DatabaseField(useGetSet = true)
     private int amount;
@@ -31,14 +31,6 @@ public class Ingredient {
         this.ID = ID;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getAmount() {
         return amount;
     }
@@ -53,6 +45,14 @@ public class Ingredient {
 
     public void setAmountOf(String amountOf) {
         this.amountOf = amountOf;
+    }
+
+    public IngredientType getType() {
+        return type;
+    }
+
+    public void setType(IngredientType type) {
+        this.type = type;
     }
 
     //endregion

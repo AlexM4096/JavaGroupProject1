@@ -10,6 +10,7 @@ module com.example.javagroupproject1 {
     opens com.example.javagroupproject1 to javafx.fxml;
     opens com.example.javagroupproject1.parsing to javafx.fxml;
     opens com.example.javagroupproject1.controller to javafx.fxml;
+    opens com.example.javagroupproject1.tools to ormlite.jdbc;
 
     exports com.example.javagroupproject1;
     exports com.example.javagroupproject1.parsing;

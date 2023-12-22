@@ -1,5 +1,6 @@
 package com.example.javagroupproject1.controller;
 
+import com.example.javagroupproject1.Database;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,6 +29,10 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         category.getItems().addAll("1", "2");
+
+        Database.INSTANCE.repositoryContext.ingredientTypes.getAll().forEach(t -> ingredient.getItems().add(t.getName()));
+
+        System.out.println(Database.INSTANCE.repositoryContext.ingredientTypes.getAll());
 
 //        for (int i =0; i < 50; i++){
 //            vBox.getChildren().add(new RecipeNode(new Recipe("Борщ", "Русский", 4, 70, 300)));
