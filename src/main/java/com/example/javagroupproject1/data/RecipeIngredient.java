@@ -1,10 +1,11 @@
 package com.example.javagroupproject1.data;
 
+import com.example.javagroupproject1.repository.IEntity;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName = "recipes-ingredients")
-public class RecipeIngredient {
+public class RecipeIngredient implements IEntity {
 
     public static final String RECIPE_ID_FIELD_NAME = "recipeID";
     public static final String INGREDIENT_ID_FIELD_NAME = "ingredientID";

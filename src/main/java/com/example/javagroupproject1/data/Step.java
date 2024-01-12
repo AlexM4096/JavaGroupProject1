@@ -1,10 +1,7 @@
 package com.example.javagroupproject1.data;
 
-import com.example.javagroupproject1.tools.SerializableImage;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
-
-import java.util.List;
 
 @DatabaseTable(tableName = "steps")
 public class Step {
@@ -25,19 +22,9 @@ public class Step {
     @DatabaseField(useGetSet = true)
     private String description;
 
-    private List<SerializableImage> images;
-
     //endregion
 
     //region Properties
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public long getID() {
         return ID;
@@ -63,13 +50,14 @@ public class Step {
         this.stepNumber = stepNumber;
     }
 
-    public List<SerializableImage> getImages() {
-        return images;
+    public String getDescription() {
+        return description;
     }
 
-    public void setImages(List<SerializableImage> images) {
-        this.images = images;
+    public void setDescription(String description) {
+        this.description = description;
     }
+
 
     //endregion
 }

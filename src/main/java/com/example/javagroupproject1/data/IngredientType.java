@@ -1,5 +1,6 @@
 package com.example.javagroupproject1.data;
 
+import com.example.javagroupproject1.repository.IEntity;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 

@@ -19,5 +19,6 @@ public class DaoContext {
         recipeIngredientDao = new RecipeIngredientDao(connectionSource);
         stepImageDao = new StepImageDao(connectionSource);
         ingredientTypeDao = new IngredientTypeDao(connectionSource);
+
     }
 }

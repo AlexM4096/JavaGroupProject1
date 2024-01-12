@@ -15,5 +15,6 @@ module com.example.javagroupproject1 {
     exports com.example.javagroupproject1;
     exports com.example.javagroupproject1.parsing;
     exports com.example.javagroupproject1.data to ormlite.jdbc;
+    exports com.example.javagroupproject1.repository to ormlite.jdbc;
 
 }

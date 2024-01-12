@@ -1,11 +1,8 @@
 package com.example.javagroupproject1.data;
 
+import com.example.javagroupproject1.repository.IEntity;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
-import javafx.scene.image.Image;
-
-import java.util.Collection;
-import java.util.List;
 
 @DatabaseTable(tableName = "recipes")
 public class Recipe implements IEntity {
@@ -30,13 +27,7 @@ public class Recipe implements IEntity {
     private int grams;
 
     @DatabaseField(useGetSet = true)
-    private int portions;
-    
-    private Collection<Image> images;
-
-    private List<Ingredient> ingredients;
-
-    private List<Step> steps;
+    private int portionsAmount;
 
     //endregion
 
@@ -50,6 +41,7 @@ public class Recipe implements IEntity {
 
     //region Properties
 
+    @Override
     public long getID() {
         return ID;
     }
@@ -86,7 +78,7 @@ public class Recipe implements IEntity {
         return cookingTimeMinutes;
     }
 
-    public void setCookingTimeMinutes(int cookingTimeMinutes){
+    public void setCookingTimeMinutes(int cookingTimeMinutes) {
         this.cookingTimeMinutes = cookingTimeMinutes;
     }
 
@@ -98,37 +90,14 @@ public class Recipe implements IEntity {
         this.grams = grams;
     }
 
-    public int getPortions() {
-        return portions;
+    public int getPortionsAmount() {
+        return portionsAmount;
     }
 
-    public void setPortions(int portions) {
-        this.portions = portions;
+    public void setPortionsAmount(int portionsAmount) {
+        this.portionsAmount = portionsAmount;
     }
 
-    public Collection<Image> getImages() {
-        return images;
-    }
-
-    public void setImages(Collection<Image> images) {
-        this.images = images;
-    }
-
-    public List<Ingredient> getIngredients() {
-        return ingredients;
-    }
-
-    public void setIngredients(List<Ingredient> ingredients) {
-        this.ingredients = ingredients;
-    }
-
-    public List<Step> getSteps() {
-        return steps;
-    }
-
-    public void setSteps(List<Step> steps) {
-        this.steps = steps;
-    }
 
     //endregion
 }

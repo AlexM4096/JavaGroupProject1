@@ -7,7 +7,7 @@ import com.j256.ormlite.support.ConnectionSource;
 import java.sql.SQLException;
 
 public class RecipeIngredientDao extends BaseDaoImpl<RecipeIngredient, Long> {
-    protected RecipeIngredientDao(ConnectionSource connectionSource) throws SQLException {
+    public RecipeIngredientDao(ConnectionSource connectionSource) throws SQLException {
         super(connectionSource, RecipeIngredient.class);
     }
 }

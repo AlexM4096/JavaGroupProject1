@@ -5,7 +5,8 @@ import com.example.javagroupproject1.data.IngredientType;
 
 import java.sql.SQLException;
 
-public class IngredientTypeRepository extends Repository implements IRepository<IngredientType> {
+public class IngredientTypeRepository extends RepositoryBase implements IIngredientTypeRepository {
+
     public IngredientTypeRepository(DaoContext dc) {
         super(dc);
     }
@@ -31,7 +32,7 @@ public class IngredientTypeRepository extends Repository implements IRepository<
     @Override
     public void add(IngredientType entity) {
         try {
-            dc.ingredientTypeDao.create(entity);
+            dc.ingredientTypeDao.createIfNotExists(entity);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
