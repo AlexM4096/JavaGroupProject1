@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "AlumniSans";
+    src: url("../fonts/AlumniSans_VariableFont_wght.ttf");
+}
+
+.root {
+    -fx-font-family: "AlumniSans";
+    -fx-font-weight: 400;
+    -fx-font-size: 20;
+
+    -fx-bacground-color-default: #F6E7DF;
+    -fx-primary-color-default: #CC80B7;
+    -fx-primary-color-hover: #CC8097;
+
+    -fx-start-margin: 0;
+    -fx-end-margin: 0;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-border-radius: 0;
+}

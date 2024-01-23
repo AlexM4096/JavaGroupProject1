@@ -1,6 +1,8 @@
 package com.example.javagroupproject1.data;
 
 import com.example.javagroupproject1.repository.IEntity;
+import com.example.javagroupproject1.tools.SerializableImage;
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -28,6 +30,9 @@ public class Recipe implements IEntity {
 
     @DatabaseField(useGetSet = true)
     private int portionsAmount;
+
+    @DatabaseField(useGetSet = true, dataType = DataType.SERIALIZABLE)
+    private SerializableImage image;
 
     //endregion
 
@@ -98,6 +103,13 @@ public class Recipe implements IEntity {
         this.portionsAmount = portionsAmount;
     }
 
+    public SerializableImage getImage() {
+        return image;
+    }
+
+    public void setImage(SerializableImage image) {
+        this.image = image;
+    }
 
     //endregion
 }

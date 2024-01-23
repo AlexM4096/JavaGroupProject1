@@ -6,11 +6,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.io.IOException;
 
 public class RecipeNode extends Parent {
     private Recipe recipe;
+
+    @FXML
+    private ImageView image;
 
     @FXML
     private Label name;
@@ -28,6 +33,7 @@ public class RecipeNode extends Parent {
     public void setRecipe(Recipe recipe) {
         this.recipe = recipe;
 
+        image.setImage(recipe.getImage().getImage());
         name.setText(recipe.getName());
         cookingTime.setText(getCookingTime());
         category.setText(recipe.getCategory());
@@ -87,7 +93,7 @@ public class RecipeNode extends Parent {
 
         try {
             this.getChildren().add(fxmlLoader.load());
-        }catch (IOException e){
+        } catch (IOException e){
             throw new RuntimeException(e);
         }
     }

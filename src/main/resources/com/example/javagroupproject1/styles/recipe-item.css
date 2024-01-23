@@ -1,0 +1,16 @@
+.root {
+    -fx-background-color: #FFFFFF;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-border-color: -fx-primary-color-default;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: white;
+}
+
+.check-box:selected .box {
+    -fx-background-color: -fx-primary-color-default;
+}

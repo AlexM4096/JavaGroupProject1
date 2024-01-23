@@ -17,6 +17,10 @@ public class SerializableImage implements Serializable {
      */
     public SerializableImage() {}
 
+    public SerializableImage(Image image) {
+        setImage(image);
+    }
+
     /**
      * setImage
      * Converts Image to 2d array of pixels
