@@ -1,5 +1,6 @@
 package com.example.javagroupproject1.data;
 
+import com.example.javagroupproject1.Database;
 import com.example.javagroupproject1.repository.IEntity;
 import com.example.javagroupproject1.tools.SerializableImage;
 import com.j256.ormlite.field.DataType;
@@ -7,9 +8,11 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 import javafx.scene.image.Image;
 
+import java.sql.SQLException;
+import java.util.List;
+
 @DatabaseTable(tableName = "recipes")
 public class Recipe implements IEntity {
-    //region Fields
 
     @DatabaseField(useGetSet = true, generatedId = true)
     private long ID;
@@ -17,17 +20,14 @@ public class Recipe implements IEntity {
     @DatabaseField(useGetSet = true)
     private String name;
 
-    @DatabaseField(useGetSet = true)
-    private String category;
-
-    @DatabaseField(useGetSet = true)
-    private int cookingTimeMinutes;
-
-    @DatabaseField(useGetSet = true)
-    private int grams;
+    @DatabaseField(useGetSet = true, foreign = true, foreignAutoCreate = true)
+    private Category category;
 
     @DatabaseField(useGetSet = true)
     private int portionsAmount;
+
+    @DatabaseField(useGetSet = true)
+    private int cookingTimeMinutes;
 
     @DatabaseField(useGetSet = true)
     private boolean isFavorite;
@@ -35,18 +35,9 @@ public class Recipe implements IEntity {
     @DatabaseField(useGetSet = true, dataType = DataType.SERIALIZABLE)
     private SerializableImage serializableImage;
 
-    //endregion
-
-    //region Constructors
-
-    public Recipe(){
+    public Recipe() {
     }
 
-    //endregion
-
-    //region Properties
-
-    @Override
     public long getID() {
         return ID;
     }
@@ -63,28 +54,12 @@ public class Recipe implements IEntity {
         this.name = name;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
-    }
-
-    public int getCookingTimeMinutes() {
-        return cookingTimeMinutes;
-    }
-
-    public void setCookingTimeMinutes(int cookingTimeMinutes) {
-        this.cookingTimeMinutes = cookingTimeMinutes;
-    }
-
-    public int getGrams() {
-        return grams;
-    }
-
-    public void setGrams(int grams) {
-        this.grams = grams;
     }
 
     public int getPortionsAmount() {
@@ -93,6 +68,19 @@ public class Recipe implements IEntity {
 
     public void setPortionsAmount(int portionsAmount) {
         this.portionsAmount = portionsAmount;
+    }
+
+    public int getCookingTimeMinutes() {
+        return cookingTimeMinutes;
+    }
+
+    public void setCookingTimeMinutes(int cookingTimeMinutes) {
+        if (cookingTimeMinutes <= 0){
+            this.cookingTimeMinutes = 0;
+            return;
+        }
+
+        this.cookingTimeMinutes = cookingTimeMinutes;
     }
 
     public boolean getIsFavorite() {
@@ -111,17 +99,38 @@ public class Recipe implements IEntity {
         this.serializableImage = serializableImage;
     }
 
-    public void setImage(Image image){
-        if (serializableImage == null) return;
-
-        serializableImage.setImage(image);
-    }
-
     public Image getImage(){
-        if (serializableImage == null) return null;
+        if(serializableImage == null) return null;
 
         return serializableImage.getImage();
     }
 
-    //endregion
+    public void setImage(Image image){
+        if (serializableImage == null)
+            serializableImage = new SerializableImage(image);
+    }
+    public String getCategoryName(){
+        if (category == null) return null;
+
+        return category.getName();
+    }
+
+    public void setCategoryName(String name){
+        if (category == null) category = new Category();
+
+        try {
+            if (name != null){
+                var a = Database.INSTANCE.daoContext.categoryDao.queryForEq("name", name);
+                if (a.isEmpty()){
+                    category.setName(name);
+                }
+                else {
+                    category = a.getFirst();
+                    category.setName(name);
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import com.example.javagroupproject1.controller.Bar?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javagroupproject1.controller.WebController">
+   <stylesheets>
+      <URL value="@../styles/default.css" />
+      <URL value="@../styles/bar.css" />
+      <URL value="@../styles/web.css" />
+   </stylesheets>
+   <top>
+      <Bar/>
+   </top>
+   <center>
+      <VBox alignment="TOP_CENTER" styleClass="center" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" onAction="#linkClick" styleClass="bebe-button" text="ПЕРЕЙТИ НА САЙТ" />
+            <TextField fx:id="link" promptText="ВСТАВЬТЕ ССЫЛКУ" />
+            <Button mnemonicParsing="false" onAction="#addClick" styleClass="bebe-button" text="ДОБАВИТЬ" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

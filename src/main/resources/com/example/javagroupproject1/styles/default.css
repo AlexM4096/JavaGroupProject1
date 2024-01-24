@@ -33,7 +33,9 @@
 .hyperlink,
 .split-pane,
 .split-pane .split-pane-divider,
-.viewport
+.viewport,
+.combo-box:editable > *,
+.scroll-bar *
 {
     -fx-padding: 0;
     -fx-border-color: none;

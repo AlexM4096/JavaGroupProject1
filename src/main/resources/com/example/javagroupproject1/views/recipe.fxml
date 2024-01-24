@@ -12,7 +12,9 @@
 
 <?import com.example.javagroupproject1.controller.Bar?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javagroupproject1.controller.RecipeController">
+<?import com.sun.javafx.scene.control.IntegerField?>
+<?import javafx.scene.text.Text?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javagroupproject1.controller.RecipeController">
    <Bar/>
    <stylesheets>
       <URL value="@../styles/default.css" />
@@ -20,7 +22,7 @@
       <URL value="@../styles/recipe.css" />
    </stylesheets>
    <children>
-      <ScrollPane fitToHeight="true">
+      <ScrollPane>
          <content>
             <VBox styleClass="veve-box">
                <children>
@@ -33,15 +35,15 @@
                   <HBox styleClass="hehe-box">
                      <children>
                         <Label text="КАТЕГОРИЯ" />
-                        <ComboBox prefWidth="150.0" />
+                        <ComboBox fx:id="categories" editable="true" prefWidth="150.0" />
                      </children>
                   </HBox>
                   <HBox styleClass="hehe-box">
                      <children>
                         <Label text="ФОТО" />
-                        <Button mnemonicParsing="false">
+                        <Button onAction="#imageClick" mnemonicParsing="false">
                            <graphic>
-                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="image" fitHeight="160.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" />
                            </graphic>
                         </Button>
                      </children>
@@ -49,19 +51,20 @@
                   <HBox styleClass="hehe-box">
                      <children>
                         <Label text="КОЛ-ВО ПОРЦИЙ" />
-                        <TextField />
+                        <TextField fx:id="portions"/>
                      </children>
                   </HBox>
                   <HBox styleClass="hehe-box">
                      <children>
                         <Label text="ВРЕМЯ ПРИГТОВЛЕНИЯ" />
-                        <TextField />
+                        <TextField fx:id="time"/>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" styleClass="button-hehe">
                      <children>
                         <Button mnemonicParsing="false" onAction="#saveClick" styleClass="bebe-buton" text="СОХРАНИТЬ" />
                         <Button mnemonicParsing="false" onAction="#closeClick" styleClass="bebe-buton" text="ЗАКРЫТЬ" />
+                        <Button mnemonicParsing="false" onAction="#deleteClick" styleClass="bebe-buton" text="УДАЛИТЬ" />
                      </children>
                   </HBox>
                </children>

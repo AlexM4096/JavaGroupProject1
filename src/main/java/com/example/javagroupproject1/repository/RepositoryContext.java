@@ -1,12 +1,13 @@
 package com.example.javagroupproject1.repository;
 
 import com.example.javagroupproject1.dao.DaoContext;
-import com.example.javagroupproject1.proxy.RecipeRepositoryProxy;
 
 public class RepositoryContext {
-    public final IRecipeRepository recipes;
+    public final IRecipeRepository recipeRepository;
+    public final IIngredientNameRepository ingredientNameRepository;
 
     public RepositoryContext(DaoContext daoContext){
-        recipes = new RecipeRepositoryProxy(new RecipeRepository(daoContext));
+        recipeRepository = new RecipeRepository(daoContext);
+        ingredientNameRepository = new IngredientNameRepository(daoContext);
     }
 }

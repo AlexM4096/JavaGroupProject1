@@ -15,10 +15,13 @@
 
 .text-field, .combo-box {
     -fx-background-radius: 15;
-    -fx-background-color: none;
     -fx-border-width: 2;
     -fx-border-color: -fx-secondary-color-default;
     -fx-border-radius: 15;
+}
+
+.combo-box {
+    -fx-padding: 10 20 10 20;
 }
 
 .combo-box:showing {
@@ -26,6 +29,7 @@
 }
 
 .text-field {
+    -fx-wrap-text: true;
     -fx-padding: 10 20 10 20;
 }
 
@@ -44,4 +48,12 @@
 
 .button-hehe {
     -fx-spacing: 100;
+}
+
+#name {
+    -fx-pref-width: 800;
+}
+
+#categories {
+    -fx-pref-width: 250;
 }

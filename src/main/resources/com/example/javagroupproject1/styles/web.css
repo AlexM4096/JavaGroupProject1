@@ -1,0 +1,21 @@
+.root {
+    -fx-background-color: -fx-bacground-color-default;
+}
+
+.center {
+    -fx-start-margin: 50 100 50 100;
+    -fx-padding: 50 100 50 100;
+    -fx-spacing: 30;
+}
+
+.text-field, .hyperlink, .bebe-button {
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 15;
+    -fx-border-width: 2;
+    -fx-border-color: -fx-secondary-color-default;
+    -fx-border-radius: 15;
+}
+
+.hyperlink:hover, .bebe-button:hover {
+    -fx-underline: true;
+}

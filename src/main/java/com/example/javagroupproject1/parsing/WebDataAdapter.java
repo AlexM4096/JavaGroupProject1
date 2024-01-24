@@ -1,6 +1,6 @@
 package com.example.javagroupproject1.parsing;
 
-import com.example.javagroupproject1.data.Ingredient;
+import com.example.javagroupproject1.data.IngredientName;
 import com.example.javagroupproject1.data.Recipe;
 import com.example.javagroupproject1.tools.SerializableImage;
 import com.example.javagroupproject1.tools.TimeConverter;
@@ -15,8 +15,9 @@ public class WebDataAdapter {
         Recipe recipe = new Recipe();
 
         recipe.setName(webData.getTitle());
-        recipe.setCategory(webData.getCategory());
+        recipe.setImage(new Image(webData.getImageUrls().getLast()));
         recipe.setPortionsAmount(webData.getPortions());
+        recipe.setCategoryName(webData.getCategory());
         recipe.setCookingTimeMinutes(TimeConverter.convertToMinutes(webData.getTime()));
 
         var images = webData.getImageUrls();
@@ -24,15 +25,15 @@ public class WebDataAdapter {
             recipe.setSerializableImage(new SerializableImage(new Image(images.getFirst())));
         }
 
-        List<Ingredient> ingredients = new ArrayList<>();
+        List<IngredientName> ingredientNames = new ArrayList<>();
         for (var a: webData.getIngredients()){
-            Ingredient ingredient = new Ingredient();
-            ingredient.setName(a);
-            ingredients.add(ingredient);
+            IngredientName ingredientName = new IngredientName();
+            ingredientName.setName(a.split("[0123456789]", 2)[0]);
+            ingredientNames.add(ingredientName);
         }
 
         return new AdaptedWebData(
                 recipe,
-                ingredients);
+                ingredientNames);
     }
 }

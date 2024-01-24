@@ -12,10 +12,11 @@ import java.sql.SQLException;
 public class Database {
     public static final Database INSTANCE = new Database();
 
-    public static final boolean CLEAR_START = true;
+    public static final boolean CLEAR_START = false;
     private static final String DATABASE_URL = "jdbc:sqlite:my-db.sqlite";
 
     public final RepositoryContext repositoryContext;
+    public final DaoContext daoContext;
 
     public Database() {
         try {
@@ -26,7 +27,7 @@ public class Database {
             else
                 createTables(connectionSource);
 
-            DaoContext daoContext = new DaoContext(connectionSource);
+            daoContext = new DaoContext(connectionSource);
             repositoryContext = new RepositoryContext(daoContext);
 
         } catch (SQLException e) {
@@ -36,21 +37,15 @@ public class Database {
 
     public void createTables(ConnectionSource connectionSource) throws SQLException{
         TableUtils.createTableIfNotExists(connectionSource, Recipe.class);
-        TableUtils.createTableIfNotExists(connectionSource, Ingredient.class);
-        TableUtils.createTableIfNotExists(connectionSource, Step.class);
-        TableUtils.createTableIfNotExists(connectionSource, RecipeIngredient.class);
-        TableUtils.createTableIfNotExists(connectionSource, StepImage.class);
-        TableUtils.createTableIfNotExists(connectionSource, IngredientType.class);
+        TableUtils.createTableIfNotExists(connectionSource, IngredientName.class);
+        TableUtils.createTableIfNotExists(connectionSource, Category.class);
     }
 
     public void clearTables(ConnectionSource connectionSource) throws SQLException{
-        TableUtils.clearTable(connectionSource, Recipe.class);
-        TableUtils.clearTable(connectionSource, Ingredient.class);
-        TableUtils.clearTable(connectionSource, Step.class);
-        TableUtils.clearTable(connectionSource, RecipeIngredient.class);
-        TableUtils.clearTable(connectionSource, StepImage.class);
-        TableUtils.clearTable(connectionSource, IngredientType.class);
-
         createTables(connectionSource);
+
+        TableUtils.clearTable(connectionSource, Recipe.class);
+        TableUtils.clearTable(connectionSource, IngredientName.class);
+        TableUtils.clearTable(connectionSource, Category.class);
     }
 }

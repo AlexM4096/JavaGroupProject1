@@ -1,5 +1,6 @@
 package com.example.javagroupproject1.controller;
 
+import com.example.javagroupproject1.Database;
 import com.example.javagroupproject1.MyApplication;
 import com.example.javagroupproject1.data.Recipe;
 import com.example.javagroupproject1.tools.TimeConverter;
@@ -46,15 +47,15 @@ public class RecipeItem extends SplitPane {
     public void setRecipe(Recipe recipe) {
         this.recipe = recipe;
 
-
         name.setText(recipe.getName());
         cookingTime.setText(TimeConverter.convertFromMinutes(recipe.getCookingTimeMinutes()));
-        category.setText(recipe.getCategory());
+        category.setText(recipe.getCategoryName());
         image.setImage(recipe.getImage());
 
         isFavorite.setSelected(recipe.getIsFavorite());
         isFavorite.setOnAction(e -> {
             recipe.setIsFavorite(isFavorite.isSelected());
+            Database.INSTANCE.repositoryContext.recipeRepository.update(recipe);
         });
     }
 
