@@ -11,22 +11,27 @@ import java.sql.SQLException;
 
 public class Database {
     public static final Database INSTANCE = new Database();
-    private static final String DATABASE_URL = "jdbc:h2:mem:my-db";
+
+    public static final boolean CLEAR_START = false;
+    private static final String DATABASE_URL = "jdbc:sqlite:my-db.sqlite";
 
     public final RepositoryContext repositoryContext;
 
     public Database() {
         try {
             ConnectionSource connectionSource = new JdbcConnectionSource(DATABASE_URL);
+
+            if (CLEAR_START)
+                clearTables(connectionSource);
+            else
+                createTables(connectionSource);
+
             DaoContext daoContext = new DaoContext(connectionSource);
-
-            createTables(connectionSource);
-
             repositoryContext = new RepositoryContext(daoContext);
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     public void createTables(ConnectionSource connectionSource) throws SQLException{
@@ -36,5 +41,14 @@ public class Database {
         TableUtils.createTableIfNotExists(connectionSource, RecipeIngredient.class);
         TableUtils.createTableIfNotExists(connectionSource, StepImage.class);
         TableUtils.createTableIfNotExists(connectionSource, IngredientType.class);
+    }
+
+    public void clearTables(ConnectionSource connectionSource) throws SQLException{
+        TableUtils.clearTable(connectionSource, Recipe.class);
+        TableUtils.clearTable(connectionSource, Ingredient.class);
+        TableUtils.clearTable(connectionSource, Step.class);
+        TableUtils.clearTable(connectionSource, RecipeIngredient.class);
+        TableUtils.clearTable(connectionSource, StepImage.class);
+        TableUtils.clearTable(connectionSource, IngredientType.class);
     }
 }

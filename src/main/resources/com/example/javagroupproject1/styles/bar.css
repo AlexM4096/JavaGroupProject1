@@ -1,0 +1,25 @@
+.nav-bar {
+    -fx-padding: 0 100 0 100;
+    -fx-alignment: center;
+    -fx-min-height: 150;
+    -fx-background-color: -fx-primary-color-default;
+}
+
+.nav-button {
+    -fx-font-size: 35;
+    -fx-background-color: none;
+}
+
+.nav-button:hover {
+    -fx-underline: true;
+}
+
+.logo {
+    -fx-font-family: "Italiana";
+    -fx-font-size: 75;
+    -fx-underline: false;
+}
+
+.logo:hover {
+    -fx-underline: true;
+}

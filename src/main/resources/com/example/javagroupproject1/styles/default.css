@@ -1,20 +1,73 @@
 @font-face {
-    font-family: "AlumniSans";
-    src: url("../fonts/AlumniSans_VariableFont_wght.ttf");
+    src: url("../fonts/AlumniSans-Regular.ttf");
 }
 
 .root {
-    -fx-font-family: "AlumniSans";
+    -fx-font-family: "Alumni Sans";
     -fx-font-weight: 400;
-    -fx-font-size: 20;
+    -fx-font-size: 30;
 
     -fx-bacground-color-default: #F6E7DF;
     -fx-primary-color-default: #CC80B7;
-    -fx-primary-color-hover: #CC8097;
+    -fx-secondary-color-default: #3F046F;
+    -fx-primary-text-color-default: #000000;
+}
 
-    -fx-start-margin: 0;
-    -fx-end-margin: 0;
+* {
+    -fx-text-fill: -fx-primary-text-color-default;
+}
+
+.label,
+.text,
+.button,
+.box,
+.combo-box-base,
+.combo-box,
+.combo-box .combo-box,
+.choice-box,
+.check-box,
+.split-menu-button,
+.list-view,
+.text-field,
+.scroll-pane,
+.hyperlink,
+.split-pane,
+.split-pane .split-pane-divider
+{
     -fx-padding: 0;
+    -fx-border-color: none;
     -fx-border-width: 0;
     -fx-border-radius: 0;
+    -fx-border-insets: 0;
+    -fx-background-color: none;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.check-box .box {
+    -fx-background-radius: 100;
+    -fx-background-color: white;
+    -fx-border-width: 3;
+    -fx-border-color: -fx-primary-color-default;
+}
+
+.check-box .box {
+    -fx-border-radius: 100;
+}
+
+.check-box:selected .mark, .check-box:hover .mark{
+    -fx-background-color: white;
+}
+
+.check-box:selected .box {
+    -fx-background-color: -fx-primary-color-default;
+}
+
+.check-box:hover .box {
+    -fx-background-color: -fx-primary-color-default;
+    -fx-opacity: 0.5;
+}
+
+.combo-box .combo-box:showing .arrow {
+    -fx-rotate: 90;
 }

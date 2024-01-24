@@ -1,16 +1,29 @@
-.root {
-    -fx-background-color: #FFFFFF;
+.item {
+    -fx-max-width: 1600;
+    -fx-pref-height: 100;
+    -fx-background-color: white;
 }
 
-.check-box .box {
-    -fx-background-color: white;
+.item:hover {
+    -fx-border-width: 2;
     -fx-border-color: -fx-primary-color-default;
 }
 
-.check-box:selected .mark {
-    -fx-background-color: white;
+
+.image-wrapper {
+    -fx-alignment: center-left;
+    -fx-pref-width: 200;
 }
 
-.check-box:selected .box {
-    -fx-background-color: -fx-primary-color-default;
+.lower-bar {
+    -fx-spacing: 30;
+    -fx-font-weight: bold;
+}
+
+.time {
+    -fx-fill: -fx-secondary-color-default;
+}
+
+.isFavorite {
+    -fx-padding: 0 50 0 0;
 }

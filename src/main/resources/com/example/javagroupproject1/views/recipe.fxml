@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.example.javagroupproject1.controller.Bar?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javagroupproject1.controller.RecipeController">
+   <Bar/>
+   <stylesheets>
+      <URL value="@../styles/default.css" />
+      <URL value="@../styles/bar.css" />
+      <URL value="@../styles/recipe.css" />
+   </stylesheets>
+   <children>
+      <ScrollPane hbarPolicy="NEVER" styleClass="scroll-pane" vbarPolicy="NEVER">
+         <content>
+            <VBox styleClass="veve-box">
+               <children>
+                  <HBox styleClass="hehe-box">
+                     <children>
+                        <Label fx:id="name" text="НАЗВАНИЕ" />
+                        <TextField />
+                     </children>
+                  </HBox>
+                  <HBox styleClass="hehe-box">
+                     <children>
+                        <Label text="КАТЕГОРИЯ" />
+                        <ComboBox prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                  <HBox styleClass="hehe-box">
+                     <children>
+                        <Label text="ФОТО" />
+                        <Button mnemonicParsing="false">
+                           <graphic>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox styleClass="hehe-box">
+                     <children>
+                        <Label text="КОЛ-ВО ПОРЦИЙ" />
+                        <TextField />
+                     </children>
+                  </HBox>
+                  <HBox styleClass="hehe-box">
+                     <children>
+                        <Label text="ВРЕМЯ ПРИГТОВЛЕНИЯ" />
+                        <TextField />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </content></ScrollPane>
+   </children>
+</VBox>

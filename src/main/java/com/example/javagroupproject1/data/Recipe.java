@@ -20,9 +20,6 @@ public class Recipe implements IEntity {
     private String category;
 
     @DatabaseField(useGetSet = true)
-    private int difficulty;
-
-    @DatabaseField(useGetSet = true)
     private int cookingTimeMinutes;
 
     @DatabaseField(useGetSet = true)
@@ -30,6 +27,9 @@ public class Recipe implements IEntity {
 
     @DatabaseField(useGetSet = true)
     private int portionsAmount;
+
+    @DatabaseField(useGetSet = true)
+    private boolean isFavorite;
 
     @DatabaseField(useGetSet = true, dataType = DataType.SERIALIZABLE)
     private SerializableImage image;
@@ -71,14 +71,6 @@ public class Recipe implements IEntity {
         this.category = category;
     }
 
-    public int getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(int difficulty) {
-        this.difficulty = difficulty;
-    }
-
     public int getCookingTimeMinutes() {
         return cookingTimeMinutes;
     }
@@ -101,6 +93,14 @@ public class Recipe implements IEntity {
 
     public void setPortionsAmount(int portionsAmount) {
         this.portionsAmount = portionsAmount;
+    }
+
+    public boolean getIsFavorite() {
+        return isFavorite;
+    }
+
+    public void setIsFavorite(boolean favorite) {
+        isFavorite = favorite;
     }
 
     public SerializableImage getImage() {

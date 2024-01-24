@@ -15,7 +15,7 @@ public class SerializableImage implements Serializable {
     /**
      * Default Constructor
      */
-    public SerializableImage() {}
+    public SerializableImage(String string) {}
 
     public SerializableImage(Image image) {
         setImage(image);

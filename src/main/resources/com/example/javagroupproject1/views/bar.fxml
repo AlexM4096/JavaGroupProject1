@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root styleClass="nav-bar" type="BorderPane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <right>
+      <Button mnemonicParsing="false" onAction="#addRecipeByYourselfClick" styleClass="nav-button" text="ДОБАВИТЬ СВОЙ РЕЦЕПТ" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <Button mnemonicParsing="false" onAction="#addRecipeFromWebSiteClick" styleClass="nav-button" text="ДОБАВИТЬ РЕЦЕПТ С САЙТА" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <Button mnemonicParsing="false" onAction="#goToMainClick" styleClass="logo" text="COOKING" BorderPane.alignment="CENTER" />
+   </center>
+</fx:root>

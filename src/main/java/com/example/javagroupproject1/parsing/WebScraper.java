@@ -50,27 +50,27 @@ public class WebScraper {
             // Извлечение кол-ва порций блюда
             Element portionsElement = document.selectFirst("div.emotion-1047m5l");
             String portions = (portionsElement != null) ? portionsElement.text() : "Название не найдено";
-            Data.setPortions(Double.parseDouble(portions));
+            Data.setPortions(Integer.parseInt(portions));
 
             // Извлечение каллорий блюда
             Element caloriesElement = document.selectFirst("[itemprop=calories]");
             String calories = (caloriesElement != null) ? caloriesElement.text() : "Название не найдено";
-            Data.setCalories(Double.parseDouble(calories)*Data.getPortions());
+            Data.setCalories(Integer.parseInt(calories)*Data.getPortions());
 
             // Извлечение белков блюда
             Element proteinsElement = document.selectFirst("[itemprop=proteinContent]");
             String proteins = (proteinsElement != null) ? proteinsElement.text() : "Название не найдено";
-            Data.setProteins(Double.parseDouble(proteins)*Data.getPortions());
+            Data.setProteins(Integer.parseInt(proteins)*Data.getPortions());
 
             // Извлечение жиров блюда
             Element fatsElement = document.selectFirst("[itemprop=fatContent]");
             String fats = (fatsElement != null) ? fatsElement.text() : "Название не найдено";
-            Data.setFats(Double.parseDouble(fats)*Data.getPortions());
+            Data.setFats(Integer.parseInt(fats)*Data.getPortions());
 
             // Извлечение углеводов блюда
             Element carbohydratesElement = document.selectFirst("[itemprop=carbohydrateContent]");
             String carbohydrates = (carbohydratesElement != null) ? carbohydratesElement.text() : "Название не найдено";
-            Data.setCarbohydrates(Double.parseDouble(carbohydrates)*Data.getPortions());
+            Data.setCarbohydrates(Integer.parseInt(carbohydrates)*Data.getPortions());
 
             // Извлечение ингредиентов
             Elements ingredientElements = document.select("div.emotion-7yevpr");

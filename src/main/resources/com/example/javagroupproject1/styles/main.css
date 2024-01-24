@@ -1,35 +1,53 @@
+@font-face {
+    src: url("../fonts/Italiana-Regular.ttf");
+}
+
 .root {
     -fx-background-color: -fx-bacground-color-default;
 }
 
-.combo-box-base {
-    -fx-background-color: -fx-primary-color-default;
-}
-
-.combo-box-base:hover {
-    -fx-background-color: -fx-primary-color-hover;
-}
-
-.nav-bar {
-    -fx-background-color: -fx-primary-color-default;
-}
-
-.nav-button {
-    -fx-background-insets: 100;
-}
-
 .filter-bar {
-
+    -fx-alignment: center;
+    -fx-min-height: 150;
 }
 
-.filter-button {
-    -fx-background-color: -fx-primary-color-default;
+.combo-box .combo-box, .main-button {
+    -fx-background-radius: 15;
+    -fx-border-width: 2;
+    -fx-border-color: -fx-secondary-color-default;
+    -fx-border-radius: 15;
 }
 
-.filter-button:hover {
-    -fx-background-color: -fx-primary-color-hover;
+.arrow {
+    -fx-background-color: -fx-secondary-color-default;
+}
+
+.combo-box .combo-box:showing {
+    -fx-background-radius: 15 15 0 0;
+    -fx-border-radius: 15 15 0 0;
+}
+
+.list-view {
+    -fx-background-color: white;
+    -fx-padding: 0 0 15 0;
+    -fx-background-radius: 0 0 15 15;
+    -fx-border-radius: 0 0 15 15;
+}
+
+.list-cell {
+    -fx-underline: false;
+}
+
+.main-button {
+    -fx-padding: 10 20 10 20;
+}
+
+.main-button:hover, .combo-box:hover .text {
+    -fx-underline: true;
 }
 
 .scroll-pane {
     -fx-background-color: -fx-bacground-color-default;
+    -fx-fit-to-width: true;
+    -fx-fit-to-height: true;
 }
