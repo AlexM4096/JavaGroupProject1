@@ -5,6 +5,7 @@ import com.example.javagroupproject1.tools.SerializableImage;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
+import javafx.scene.image.Image;
 
 @DatabaseTable(tableName = "recipes")
 public class Recipe implements IEntity {
@@ -32,14 +33,13 @@ public class Recipe implements IEntity {
     private boolean isFavorite;
 
     @DatabaseField(useGetSet = true, dataType = DataType.SERIALIZABLE)
-    private SerializableImage image;
+    private SerializableImage serializableImage;
 
     //endregion
 
     //region Constructors
 
     public Recipe(){
-
     }
 
     //endregion
@@ -103,12 +103,24 @@ public class Recipe implements IEntity {
         isFavorite = favorite;
     }
 
-    public SerializableImage getImage() {
-        return image;
+    public SerializableImage getSerializableImage() {
+        return serializableImage;
     }
 
-    public void setImage(SerializableImage image) {
-        this.image = image;
+    public void setSerializableImage(SerializableImage serializableImage) {
+        this.serializableImage = serializableImage;
+    }
+
+    public void setImage(Image image){
+        if (serializableImage == null) return;
+
+        serializableImage.setImage(image);
+    }
+
+    public Image getImage(){
+        if (serializableImage == null) return null;
+
+        return serializableImage.getImage();
     }
 
     //endregion

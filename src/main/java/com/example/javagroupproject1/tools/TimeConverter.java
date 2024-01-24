@@ -1,7 +1,7 @@
 package com.example.javagroupproject1.tools;
 
-public class MinutesConverter {
-    public static String convert(int timeInMinutes) {
+public class TimeConverter {
+    public static String convertFromMinutes(int timeInMinutes) {
         String string = "";
 
         int cookingHours = timeInMinutes / 60;
@@ -37,9 +37,36 @@ public class MinutesConverter {
                     cookingMinutesWord = "минут";
                     break;
             }
-            string += cookingHours + " " + cookingMinutesWord;
+            string += cookingMinutes + " " + cookingMinutesWord;
         }
 
         return string;
+    }
+
+    public static int convertToMinutes(String string){
+        String[] strings = string.split(" ");
+        int length = strings.length;
+
+        if (length == 2){
+            String str = strings[1];
+            int a = Integer.parseInt(strings[0]);
+
+            if (str.contains("минут")){
+                return a;
+            }
+            else if (str.contains("час")){
+                return a * 60;
+            }
+
+        }
+        else if (length == 4){
+            String str = strings[3];
+            int a = Integer.parseInt(strings[0]);
+            int b = Integer.parseInt(strings[2]);
+
+            return a * 60 + b;
+        }
+
+        return 0;
     }
 }

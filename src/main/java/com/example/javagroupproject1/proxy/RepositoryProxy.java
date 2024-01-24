@@ -73,6 +73,14 @@ public abstract class RepositoryProxy<TEntity extends IEntity, TRepository exten
         map.remove(entity.getID());
     }
 
+    @Override
+    public void addOrUpdate(TEntity entity){
+        if (contains(entity))
+            update(entity);
+        else
+            add(entity);
+    }
+
     private boolean contains(TEntity entity){
         return map.containsKey(entity.getID());
     }

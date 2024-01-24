@@ -14,8 +14,6 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class WebScraper {
     public WebData scrapeWebsite(String url, String outPut) {
         WebData Data = new WebData();
@@ -91,7 +89,7 @@ public class WebScraper {
             Data.setPreparationSteps(preparationSteps);
 
             // Извлечение изображений шагов приготовления
-            Elements imgElements = document.select("img.emotion-ducv57");
+            Elements imgElements = document.select("img.emotion-0");
             for (Element imgElement : imgElements) {
                 String imageUrl = imgElement.attr("src");
                 imageUrls.add(imageUrl);
@@ -143,8 +141,4 @@ public class WebScraper {
         }
 
     }
-    public static void main(String[] args) {
-
-    }
-
 }

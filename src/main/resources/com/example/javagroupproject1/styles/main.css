@@ -11,31 +11,16 @@
     -fx-min-height: 150;
 }
 
-.combo-box .combo-box, .main-button {
+.combo-box .combo-box, .main-button, #time, #favorite {
     -fx-background-radius: 15;
     -fx-border-width: 2;
     -fx-border-color: -fx-secondary-color-default;
     -fx-border-radius: 15;
 }
 
-.arrow {
-    -fx-background-color: -fx-secondary-color-default;
-}
-
-.combo-box .combo-box:showing {
+.combo-box .combo-box:showing, #time:showing, #favorite:showing {
     -fx-background-radius: 15 15 0 0;
     -fx-border-radius: 15 15 0 0;
-}
-
-.list-view {
-    -fx-background-color: white;
-    -fx-padding: 0 0 15 0;
-    -fx-background-radius: 0 0 15 15;
-    -fx-border-radius: 0 0 15 15;
-}
-
-.list-cell {
-    -fx-underline: false;
 }
 
 .main-button {
@@ -44,10 +29,4 @@
 
 .main-button:hover, .combo-box:hover .text {
     -fx-underline: true;
-}
-
-.scroll-pane {
-    -fx-background-color: -fx-bacground-color-default;
-    -fx-fit-to-width: true;
-    -fx-fit-to-height: true;
 }

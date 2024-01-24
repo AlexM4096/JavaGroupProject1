@@ -32,7 +32,8 @@
 .scroll-pane,
 .hyperlink,
 .split-pane,
-.split-pane .split-pane-divider
+.split-pane .split-pane-divider,
+.viewport
 {
     -fx-padding: 0;
     -fx-border-color: none;
@@ -68,6 +69,28 @@
     -fx-opacity: 0.5;
 }
 
-.combo-box .combo-box:showing .arrow {
+.combo-box .combo-box:showing .arrow, .combo-box:showing .arrow {
     -fx-rotate: 90;
+}
+
+.arrow {
+    -fx-background-color: -fx-secondary-color-default;
+}
+
+.list-view {
+    -fx-background-color: white;
+    -fx-padding: 0 0 15 0;
+    -fx-background-radius: 0 0 15 15;
+    -fx-border-radius: 0 0 15 15;
+}
+
+.list-cell {
+    -fx-underline: false;
+}
+
+.scroll-pane {
+    -fx-vbar-policy: never;
+    -fx-hbar-policy: never;
+    -fx-fit-to-width: true;
+    -fx-fit-to-height: true;
 }

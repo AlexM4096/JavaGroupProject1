@@ -54,4 +54,16 @@ public class RecipeRepository extends RepositoryBase implements IRecipeRepositor
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public void addOrUpdate(Recipe entity) {
+        try {
+            if (dc.recipeDao.idExists(entity.getID()))
+                update(entity);
+            else
+                add(entity);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

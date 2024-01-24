@@ -1,7 +1,5 @@
 package com.example.javagroupproject1.tools;
 
-import javafx.event.Event;
-
 import java.util.HashMap;
 
 public class Prefs {

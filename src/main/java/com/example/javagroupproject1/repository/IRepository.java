@@ -6,4 +6,5 @@ public interface IRepository<T extends IEntity> {
     void add(T entity);
     void update(T entity);
     void delete(T entity);
+    void addOrUpdate(T entity);
 }

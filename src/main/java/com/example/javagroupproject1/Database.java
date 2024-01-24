@@ -12,7 +12,7 @@ import java.sql.SQLException;
 public class Database {
     public static final Database INSTANCE = new Database();
 
-    public static final boolean CLEAR_START = false;
+    public static final boolean CLEAR_START = true;
     private static final String DATABASE_URL = "jdbc:sqlite:my-db.sqlite";
 
     public final RepositoryContext repositoryContext;
@@ -50,5 +50,7 @@ public class Database {
         TableUtils.clearTable(connectionSource, RecipeIngredient.class);
         TableUtils.clearTable(connectionSource, StepImage.class);
         TableUtils.clearTable(connectionSource, IngredientType.class);
+
+        createTables(connectionSource);
     }
 }

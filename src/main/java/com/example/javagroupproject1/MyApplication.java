@@ -1,7 +1,10 @@
 package com.example.javagroupproject1;
 
 import com.example.javagroupproject1.controller.SceneController;
-import com.example.javagroupproject1.data.Recipe;
+import com.example.javagroupproject1.parsing.AdaptedWebData;
+import com.example.javagroupproject1.parsing.WebData;
+import com.example.javagroupproject1.parsing.WebDataAdapter;
+import com.example.javagroupproject1.parsing.WebScraper;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,13 +22,13 @@ public class MyApplication extends Application {
         stage.setScene(scene);
         stage.show();
 
-        Recipe recipe = new Recipe();
-        recipe.setName("Иди нахй сука");
-        Database.INSTANCE.repositoryContext.recipes.add(recipe);
-
-        for (var a : Database.INSTANCE.repositoryContext.recipes.getAll()){
-            System.out.println(a.getName());
-        }
+        WebScraper webScraper = new WebScraper();
+        WebData webData = webScraper.scrapeWebsite(
+                "https://eda.ru/recepty/vypechka-deserty/kapustnij-pirog-17889",
+                "C:\\Users\\trank\\OneDrive\\Документы\\Новая папка");
+        WebDataAdapter webDataAdapter = new WebDataAdapter();
+        AdaptedWebData adaptedWebData = webDataAdapter.adapt(webData);
+        Database.INSTANCE.repositoryContext.recipes.add(adaptedWebData.recipe());
 
         SceneController sceneController = new SceneController(scene);
         sceneController.addScene("main", FXMLLoader.load(Objects.requireNonNull(getClass().getResource("views/main.fxml"))));

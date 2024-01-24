@@ -14,10 +14,9 @@ module com.example.javagroupproject1 {
     opens com.example.javagroupproject1.tools to ormlite.jdbc;
 
     exports com.example.javagroupproject1;
+    exports com.example.javagroupproject1.tools;
+    exports  com.example.javagroupproject1.dao;
     exports com.example.javagroupproject1.parsing;
     exports com.example.javagroupproject1.data to ormlite.jdbc;
     exports com.example.javagroupproject1.repository to ormlite.jdbc;
-    exports com.example.javagroupproject1.adapter;
-    opens com.example.javagroupproject1.adapter to javafx.fxml;
-
 }

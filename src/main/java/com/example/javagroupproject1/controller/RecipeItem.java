@@ -2,17 +2,15 @@ package com.example.javagroupproject1.controller;
 
 import com.example.javagroupproject1.MyApplication;
 import com.example.javagroupproject1.data.Recipe;
-import com.example.javagroupproject1.tools.MinutesConverter;
+import com.example.javagroupproject1.tools.TimeConverter;
 import com.example.javagroupproject1.tools.Prefs;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-
-import javafx.event.ActionEvent;
 
 import java.io.IOException;
 
@@ -37,6 +35,7 @@ public class RecipeItem extends SplitPane {
     @FXML
     private void click(ActionEvent event){
         Prefs.getInstance().createOrUpdate("recipe", recipe);
+        RecipeController.getInstance().update();
         SceneController.instance.activateScene("recipe");
     }
 
@@ -47,10 +46,11 @@ public class RecipeItem extends SplitPane {
     public void setRecipe(Recipe recipe) {
         this.recipe = recipe;
 
-        //image.setImage(recipe.getImage().getImage());
+
         name.setText(recipe.getName());
-        cookingTime.setText(MinutesConverter.convert(recipe.getCookingTimeMinutes()));
+        cookingTime.setText(TimeConverter.convertFromMinutes(recipe.getCookingTimeMinutes()));
         category.setText(recipe.getCategory());
+        image.setImage(recipe.getImage());
 
         isFavorite.setSelected(recipe.getIsFavorite());
         isFavorite.setOnAction(e -> {

@@ -1,6 +1,8 @@
 package com.example.javagroupproject1.controller;
 
 import com.example.javagroupproject1.MyApplication;
+import com.example.javagroupproject1.data.Recipe;
+import com.example.javagroupproject1.tools.Prefs;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,6 +27,8 @@ public class Bar extends BorderPane {
 
     @FXML
     private void addRecipeByYourselfClick(ActionEvent event) {
+        Prefs.getInstance().createOrUpdate("recipe", new Recipe());
+        RecipeController.getInstance().update();
         SceneController.instance.activateScene("recipe");
     }
 

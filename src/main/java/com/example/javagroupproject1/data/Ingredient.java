@@ -14,6 +14,9 @@ public class Ingredient {
     private IngredientType type;
 
     @DatabaseField(useGetSet = true)
+    private String name;
+
+    @DatabaseField(useGetSet = true)
     private int amount;
 
     @DatabaseField(useGetSet = true)
@@ -53,6 +56,14 @@ public class Ingredient {
 
     public void setType(IngredientType type) {
         this.type = type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     //endregion

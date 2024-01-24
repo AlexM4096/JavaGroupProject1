@@ -3,7 +3,6 @@ package com.example.javagroupproject1.parsing;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class WebData {
     private String category;
     private String title;
@@ -13,9 +12,9 @@ public class WebData {
     private Integer proteins;
     private Integer fats;
     private Integer carbohydrates;
-    public final List<String> ingredients;
-    public final List<String> preparationSteps;
-    public final List<String> imageUrls;
+    private List<String> ingredients;
+    private List<String> preparationSteps;
+    private List<String> imageUrls;
 
 
     public WebData() {
@@ -48,6 +47,14 @@ public class WebData {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public List<String> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<String> ingredients) {
+        this.ingredients = ingredients;
     }
 
     public Integer getPortions() {
@@ -88,6 +95,21 @@ public class WebData {
 
     public void setCarbohydrates(Integer carbohydrates) {
         this.carbohydrates = carbohydrates;
+    }
+
+    public List<String> getPreparationSteps() {
+        return preparationSteps;
+    }
+
+    public void setPreparationSteps(List<String> preparationSteps) {
+        this.preparationSteps = preparationSteps;
+    }
+    public List<String> getImageUrls() {
+        return imageUrls;
+    }
+
+    public void setImageUrls(List<String> imageUrls) {
+        this.imageUrls = imageUrls;
     }
 
     //endregion
